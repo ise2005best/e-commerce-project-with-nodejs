@@ -1,0 +1,86 @@
+.sign-up-page{
+    width: 95%;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin: auto;
+}
+.picture-container{
+    width: 85%;
+}
+.cake-picture{
+    width: 90vh;
+    height: 88vh;
+}
+.signup-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1481BA;
+    padding: 20px;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid grey;
+    height: 88vh;
+}
+.header{
+    margin-bottom: 40px;
+}
+.text-fields{
+    margin-bottom: 20px;
+}
+.sign-in-text{
+    width: 65vh;
+    padding: 8px;
+    border: 1px solid grey;
+    outline: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-bottom: 6px;
+}
+.password-container{
+    display: flex;
+    align-items: center;
+}
+.eye-icon{
+    margin-left: -25px;
+    padding-bottom: 2px;
+    cursor: pointer;
+}
+.password-check-list-container{
+    justify-content: center;
+}
+.password-check-list{
+    width: 100%;
+    margin-bottom: 40px !important;
+    margin-left: 20% !important;
+}
+.kjicut{
+    margin: 10px 0 !important;
+}
+.checklist-icon{
+    margin-right: 20px !important;
+}
+.error-message{
+    text-align: left;
+    color: white ;
+    font-size: 12px;
+}
+.submit-button{
+    padding: 10px;
+    font-size: 20px;
+    width: 350px;
+    border: none;
+    background-color: #05204A;
+    color: white;
+    border-radius: 5px;
+    text-align: center;
+    margin-left: 15%;
+}
+.submit-button:hover{
+    color: #0CAADC ;
+    background-color: white ;
+    border: 1px solid blue;
+}

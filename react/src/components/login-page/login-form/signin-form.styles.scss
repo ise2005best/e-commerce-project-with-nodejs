@@ -1,0 +1,80 @@
+.sign-in{
+   
+    width: fit-content;
+    margin: auto;
+    background-color: white;
+    padding: 40px;
+    box-shadow: 1px 1px 15px grey;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 65vh;
+    width: 80vh;
+    margin-top: 50px;
+    
+.login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+.password-container{
+    display: flex;
+    align-items: center;
+}
+.sign-in-text{
+    width: 65vh;
+    padding: 8px;
+    border: 1px solid grey;
+    outline: none;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 5px;
+    margin-bottom: 6px;
+}
+.eye-icon{
+    cursor: pointer;
+    margin-left: -25px;
+}
+.forget-password-button{
+    border: none;
+    outline: none;
+    color: black;
+    text-decoration: none;
+    float: right;
+}
+.button-container{
+    text-align: center;
+    margin: 15px;
+    
+}
+.login-button{
+    padding: 10px;
+    font-size: 20px;
+    width: 350px;
+    border: none;
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+   text-align: center;
+}
+.login-button:hover{
+    color: blue;
+    background-color: white;
+    border: 1px solid blue;
+}
+.error-messages{
+    text-align: left;
+    color: red;
+    font-size: 12px;
+}
+.sign-up-link{
+    text-decoration: none;
+    float: right;
+    font-size: 14px;
+    font-weight: 200;
+}
+}
