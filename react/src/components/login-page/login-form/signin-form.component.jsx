@@ -5,7 +5,6 @@ import { eyeOff } from 'react-icons-kit/feather/eyeOff';
 import { eye } from 'react-icons-kit/feather/eye';
 import LogIn from "../../login-form/login";
 import './signin-form.styles.scss';
-import Validation  from "../login-validation";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 const SignInForm = () => {
@@ -29,11 +28,14 @@ const [errorMessages, setErrorMessages] = useState('')
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        setErrorMessages(Validation(fields))
-        axios.post('http://localhost:8081/sign-in', fields)
+        axios.post('http://localhost:8002/sign-in', fields)
         .then(res=>{
             if(res.data === "Success"){
                 navigate('/')
+            }else if (res.data === "Incorrect password") {
+                setErrorMessages('Incorrect password')
+            }else if (res.data === "User not found"){
+                setErrorMessages('User not found')
             }
         })
     }
@@ -70,8 +72,8 @@ const [errorMessages, setErrorMessages] = useState('')
                         className="eye-icon"
                     />
                 </div>
-                <p className="error-messages">{errorMessages.password}</p>
-                <Link className="forget-password-button" to={'/sign-up'}>
+                <p className="error-messages">{errorMessages}</p>
+                <Link className="forget-password-button" to={'/forget-password'}>
                     Forgot Password?
                 </Link>
                 <br />

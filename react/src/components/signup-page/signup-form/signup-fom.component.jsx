@@ -26,14 +26,21 @@ const SignUpForm = () => {
     const resetForm = () => {
         setFields(initialFields);
     }
+    const handleChange = (event) => {
+        const { name, value } = event.target;
+        setFields({ ...fields, [name]: value });
+    }
 
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8081/sign-up', fields);
+            const response = await axios.post('http://localhost:8002/sign-up', fields);
             if (response.data === 'Email already exists') {
                 setErrorMessages("Email already exists");
-            } else {
+            } else if(response.data === 'Success'){
+                navigate('/')
+            }
+            else {
                 navigate('/thank-you-for-signing-up-with-us');
             }
         } catch (error) {
@@ -42,10 +49,7 @@ const SignUpForm = () => {
     };
 
 
-const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFields({ ...fields, [name]: value });
-}
+
 
 const togglePassword = () => {
     setShowPassword(!showPassword);
