@@ -1,39 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri&display=swap');
+
 .sign-in{
-   
-    width: fit-content;
     margin: auto;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     padding: 40px;
-    box-shadow: 1px 1px 15px grey;
+    box-shadow: 0px 4px 10px grey;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    height: 65vh;
-    width: 80vh;
-    margin-top: 50px;
+    height: fit-content;
+    width: 600px;
+    
     
 .login{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-bottom: 30px;
+    padding-bottom: 50px;
+    color: #172447;
+    font-family: 'El Messiri', sans-serif;
 }
 .password-container{
     display: flex;
     align-items: center;
+    
 }
 .sign-in-text{
-    width: 65vh;
+    width: 55vh;
     padding: 8px;
-    border: 1px solid grey;
     outline: none;
     border-radius: 4px;
     box-sizing: border-box;
     margin-top: 5px;
     margin-bottom: 6px;
+    border: 0.5px solid r#1D2743;
+}
+.sign-in-text:hover{
+    border: 0.5px solid  #FE9000 ;
 }
 .eye-icon{
     cursor: pointer;
@@ -42,9 +49,10 @@
 .forget-password-button{
     border: none;
     outline: none;
-    color: black;
+    color: #1D2743;
     text-decoration: none;
     float: right;
+    font-family: 'El Messiri', sans-serif;
 }
 .button-container{
     text-align: center;
@@ -56,15 +64,16 @@
     font-size: 20px;
     width: 350px;
     border: none;
-    background-color: blue;
-    color: white;
+    background-color: #1D2743;
+    color: #F5FBEF;
     border-radius: 5px;
    text-align: center;
+   font-family: 'El Messiri', sans-serif;
 }
 .login-button:hover{
-    color: blue;
-    background-color: white;
-    border: 1px solid blue;
+    color: #1D2743;
+    background-color: #FE9000;
+    transition: ease-in-out 0.3s;
 }
 .error-messages{
     text-align: left;
@@ -75,6 +84,9 @@
     text-decoration: none;
     float: right;
     font-size: 14px;
-    font-weight: 200;
+    font-weight: 500px;
+    font-family: 'El Messiri', sans-serif;
+    
 }
 }
+
