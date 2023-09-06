@@ -5,16 +5,17 @@ import { eyeOff } from 'react-icons-kit/feather/eyeOff';
 import { eye } from 'react-icons-kit/feather/eye';
 import LogIn from "../../login-form/login";
 import './signin-form.styles.scss';
-import { signInAuthUserWithEmailAndPassword } from "../../utils/firebase/firebase-for-signIn/firebase-sign-in.utils";
-
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 const SignInForm = () => {
-    const initialFields = {
+    const navigate = useNavigate();
+    const initialFields =   {
         email: '',
         password: '',
     }
     const [fields, setFields] = useState(initialFields);
     const [showPassword, setShowPassword] = useState(false);
-    const [errorMessages, setErrorMessages] = useState('')
+const [errorMessages, setErrorMessages] = useState('')
     const { email, password } = fields;
     const resetForm = () => {
         setFields(initialFields);
@@ -27,21 +28,16 @@ const SignInForm = () => {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        try {
-            await signInAuthUserWithEmailAndPassword(email, password);
-            resetForm();
-        } catch (error) {
-            switch (error.code) {
-                case 'auth/wrong-password':
-                    setErrorMessages("Incorrect password")
-                    break;
-                case 'auth/user-not-found':
-                    setErrorMessages('no user found')
-                    break;
-                default:
-                    setErrorMessages(error)
+        axios.post('http://localhost:8002/sign-in', fields)
+        .then(res=>{
+            if(res.data === "Success"){
+                navigate('/')
+            }else if (res.data === "Incorrect password") {
+                setErrorMessages('Incorrect password')
+            }else if (res.data === "User not found"){
+                setErrorMessages('User not found')
             }
-        }
+        })
     }
 
 
@@ -51,7 +47,7 @@ const SignInForm = () => {
 
     return (
         <div>
-            <h1 className="login"> SIGN IN </h1>
+            <h1 className="login"> LOGIN </h1>
             <form onSubmit={handleSubmit}>
                 <LogIn type="email"
                     required
@@ -91,7 +87,7 @@ const SignInForm = () => {
                     Dont have an account? Please sign up
                 </Link>
 
-
+                {/* <ForgetPasswordPage email={email}/> */}
             </form>
         </div>
     )

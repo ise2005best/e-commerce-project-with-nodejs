@@ -1,7 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import './forgot-password.scss'
 const ForgetPassword = ()=>{
 const [email, setEmail] = useState('')
 const [errorMessages, setErrorMessages] = useState('');
@@ -21,32 +20,29 @@ const handleSubmit =(event)=>{
         }
     })
 }
-return (
-    <div style={{ backgroundColor: '#1D2743', padding: '270px 0px' }}>
-        <div className="main-container">
-            <h2 className="title">
+    return(
+        <div>
+            <h2>
                 Forget Password
             </h2>
-            <span className="body">
+            <span>
                 Please input your email to reset your password
             </span>
             <form onSubmit={handleSubmit}>
-                <input
-                    placeholder="Email"
-                    type="email"
-                    name="email"
-                    className="input"
-                    value={email}
-                    required
-                    onChange={handleEmailChange}
-                />
-                <p>{errorMessages}</p>
-                <button type="submit" className="button">
-                    Submit
-                </button>
+        <input
+        placeholder="Email"
+        type="email"
+        name="email"
+        value={email}
+        required
+        onChange={handleEmailChange}
+        />
+        <p>{errorMessages}</p>
+        <button type="submit">
+            Submit
+        </button>
             </form>
         </div>
-    </div>
-)
+    )
 }
 export default ForgetPassword;
