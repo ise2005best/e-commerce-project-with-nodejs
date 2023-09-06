@@ -127,5 +127,5 @@ const togglePassword = () => {
         </div>
     )
 }
-
+}
 export default SignUpForm;
