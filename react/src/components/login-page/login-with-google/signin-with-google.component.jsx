@@ -5,7 +5,7 @@ const SignInWithGoogle = () => {
 
     return (
         <div className="google-button-container">
-            <p className="text-divider">Or sign in with Google</p>
+            <p className="texts-divider">Or sign in with Google</p>
             <div className="google-button-wrapper">
                 <button className="google-button">
                     <img className='google-icon' src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-suite-everything-you-need-know-about-google-newest-0.png" alt="google logo png" />
