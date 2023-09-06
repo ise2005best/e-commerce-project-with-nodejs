@@ -54,7 +54,7 @@ module.exports.sendOtpMail = async (email) => {
     }
 }
 
-module.exports.sendEmailVerification = async (email,urlToBeClicked) => {
+module.exports.sendEmailVerification = async (email,userDisplayName) => {
     try {
         let emailVerification = await transporter.sendMail({
             from: process.env.MAIL_SENDER,
