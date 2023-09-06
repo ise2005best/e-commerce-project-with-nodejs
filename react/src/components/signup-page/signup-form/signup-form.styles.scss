@@ -1,44 +1,41 @@
-.sign-up-page{
-    width: 95%;
-    display: flex;
-    align-items: center;
-    gap: 60px;
-    margin: auto;
-}
-.picture-container{
-    width: 85%;
-}
-.cake-picture{
-    width: 90vh;
-    height: 88vh;
-}
+@import url('https://fonts.googleapis.com/css2?family=El+Messiri&display=swap');
+
 .signup-container{
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    background-color: #1481BA;
-    padding: 20px;
-    width: 100%;
+    background-color: white;
+    width: 500px;
     border-radius: 10px;
-    border: 1px solid grey;
-    height: 88vh;
+    border: 0px ;
+    height: 700px;
+    box-shadow: 0px 10px 20px black;
+    margin: 50px auto ;
+    color: #1D2743;
 }
 .header{
     margin-bottom: 40px;
+    font-family: 'El Messiri', sans-serif;
 }
 .text-fields{
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
+
 .sign-in-text{
-    width: 65vh;
+    width: 350px;
     padding: 8px;
-    border: 1px solid grey;
+    border: 0.5px solid r #1D2743;
     outline: none;
     border-radius: 4px;
     box-sizing: border-box;
     margin-top: 5px;
     margin-bottom: 6px;
+    font-family: 'El Messiri', sans-serif;
+}
+
+.sign-in-text:hover{
+    border: 0.5px solid #FE9000;
 }
 .password-container{
     display: flex;
@@ -49,13 +46,17 @@
     padding-bottom: 2px;
     cursor: pointer;
 }
+.eye-icon:hover{
+    color:#FE9000
+}
 .password-check-list-container{
-    justify-content: center;
+    margin-right: 0px;
+    font-family: 'El Messiri', sans-serif;
 }
 .password-check-list{
     width: 100%;
     margin-bottom: 40px !important;
-    margin-left: 20% !important;
+   
 }
 .kjicut{
     margin: 10px 0 !important;
@@ -65,22 +66,26 @@
 }
 .error-message{
     text-align: left;
-    color: white ;
+    color: red ;
     font-size: 12px;
 }
+
 .submit-button{
-    padding: 10px;
     font-size: 20px;
     width: 350px;
     border: none;
-    background-color: #05204A;
-    color: white;
+    background-color: #1D2743;
+    color: #F5FBEF;
     border-radius: 5px;
     text-align: center;
-    margin-left: 15%;
+    padding: 20px;
+    font-family: 'El Messiri', sans-serif;
 }
+
 .submit-button:hover{
-    color: #0CAADC ;
-    background-color: white ;
-    border: 1px solid blue;
+    color: #1D2743;
+    background-color: #FE9000;
+    border: rgb(42, 93, 195);
+    font-size: 24px;
+    transition: ease-in-out 0.3s;
 }
