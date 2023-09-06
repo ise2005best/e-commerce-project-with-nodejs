@@ -46,4 +46,8 @@ router.post('/password-reset',(req,res)=>{
          }
     })
 })
+
+router.post('/resend-otp', (req, res)=>{
+    
+})
 module.exports = router;

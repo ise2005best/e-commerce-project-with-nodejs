@@ -3,7 +3,7 @@ const db = require('../config/db.config');
 const sendOtpEmail = require('../utils/handleEmail')
 
 const currentTime = new Date();
-var expiredTime = new Date(currentTime.getTime() + 5 * 60 * 1000)
+var expiredTime = new Date(currentTime.getTime() + 5 * 60 * 1000) // 5 minutes after current time
 module.exports.handleOtpSubmission = async (userEmail) => {
     const values = [
         otp, userEmail, currentTime, expiredTime

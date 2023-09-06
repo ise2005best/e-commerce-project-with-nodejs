@@ -36,13 +36,10 @@ const SignUpForm = () => {
         try {
             const response = await axios.post('http://localhost:8002/sign-up', fields);
             if (response.data === 'Email already exists') {
-                setErrorMessages("Email already exists");
-            } else if(response.data === 'Success'){
-                navigate('/')
-            }
-            else {
+                setErrorMessages("Email already exists"); 
+             } else if(response.data === 'Success'){
                 navigate('/thank-you-for-signing-up-with-us');
-            }
+             }
         } catch (error) {
             console.error(error);
         }
