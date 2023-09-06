@@ -1,0 +1,120 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for the Google Map embed */
+.google-map {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+}
+
+/* Style for the logo */
+.Logo {
+  grid-column: span 2;
+  font-size: 450%;
+  padding: 50px;
+  margin-right: 50px;
+}
+
+/* Styling for the footer */
+.footer {
+  background: linear-gradient(to bottom, #1D2743 70%, #F5FBEF 30%);
+  color: #FE9000;
+  padding: 20px 0;
+  font-size: 12px;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: auto 1fr 1fr 1fr 1fr; /* 5 columns: 2 for logo, 1 for each section */
+  align-items: start; /* Align items at the start of each cell */
+}
+
+/* Style for footer links */
+.footer-link {
+  color: #ffffff;
+  text-decoration: none;
+  margin-bottom: 5px;
+  font-size: 16px;
+}
+
+.footer-link:hover {
+  text-decoration: underline;
+}
+
+.address,
+.legal-links,
+.services {
+  padding: 50px;
+  text-align: center;
+}
+
+.legal-links a,
+.services a {
+  color: #FE9000;
+  text-align: center;
+  display: block;
+  margin-bottom: 5px;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 20px;
+}
+
+/* Responsive layout for screens at 870px and below */
+@media (max-width: 960px) {
+    .footer-content {
+      display: grid;
+      grid-template-columns: 1fr; /* Single column layout */
+      grid-template-rows: auto auto; /* Two rows */
+      grid-gap: 20px; /* Spacing between grid items */
+      align-items: start;
+    }
+  
+    .Logo {
+      grid-column: 1 / span 2; /* Logo spans both columns */
+      text-align: center;
+      font-size: 450%;
+    }
+  
+    .address,
+    .legal-links,
+    .services {
+      grid-column: 1 / span 1; /* Each item spans a single column */
+      text-align: center;
+      padding: 0;
+    }
+  
+    .legal-links h3,
+    .services h3 {
+      font-size: 26px;
+    }
+  
+    .legal-links ul,
+    .services ul {
+      margin-left: 0;
+      list-style-type: none;
+    }
+  }
+  
+
+/* Remove bullet points from list items */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.logo-link {
+  height: 100%;
+  width: 70px;
+  padding: 25px;
+  font-family: "Tilt Prism", sans-serif;
+  text-decoration: none;
+  font-size: 100%;
+  font-weight: bolder;
+  color: #FE9000;
+}
