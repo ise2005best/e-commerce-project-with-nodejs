@@ -5,8 +5,7 @@ import { Icon } from 'react-icons-kit';
 import { eyeOff } from 'react-icons-kit/feather/eyeOff';
 import { eye } from 'react-icons-kit/feather/eye'
 import LogIn from "../../login-form/login";
-import picture from '../../../static/assortment-pieces-cake.jpg';
-import axios from 'axios';
+import { createAuthUserWithEmailAndPassword, createUserDocumentFromAuth } from "../../utils/firebase/firebase-for-signUp/firebase-sign-up.utils";
 import './signup-form.styles.scss';
 const initialFields = {
     displayName: '',
@@ -21,109 +20,112 @@ const SignUpForm = () => {
     const [passwordValid, setPasswordValid] = useState(false);
     const [errorMessages, setErrorMessages] = useState('');
     const { displayName, email, password, confirmPassword } = fields;
-    const navigate = useNavigate();
+   const navigate = useNavigate();
 
     const resetForm = () => {
         setFields(initialFields);
     }
+ 
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        if (!passwordValid) {
+            setErrorMessages("Password does not meet the requirements");
+        }
+
+        try {
+            const { user } = await createAuthUserWithEmailAndPassword(email, password);
+            await createUserDocumentFromAuth(user, { displayName });
+            resetForm();
+            navigate("/thank-you-for-signing-up-with-us", {state : {user}});
+        } catch (error) {
+            if (error.code === 'auth/email-already-in-use') {
+                setErrorMessages('Cannot create user, email already in use');
+            } else {
+                console.error("Error getting this user", error);
+                setErrorMessages("An unexpected error occurred");
+            }
+        }
+    }
+
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFields({ ...fields, [name]: value });
     }
 
-    const handleSubmit = async (event) => {
-        event.preventDefault();
-        try {
-            const response = await axios.post('http://localhost:8002/sign-up', fields);
-            if (response.data === 'Email already exists') {
-                setErrorMessages("Email already exists");
-            } else if(response.data === 'Success'){
-                navigate('/')
-            }
-            else {
-                navigate('/thank-you-for-signing-up-with-us');
-            }
-        } catch (error) {
-            console.error(error);
-        }
-    };
-
-
-
-
-const togglePassword = () => {
-    setShowPassword(!showPassword);
-}
-
-return (
-    <div className="sign-up-page">
-        <div className="picture-container">
-            <img alt="side-by-side-img-cake" className="cake-picture" src={picture} />
-        </div>
-        <div className="signup-container">
-            <h2 className="header">CREATE NEW ACCOUNT</h2>
+    const togglePassword = () => {
+        setShowPassword(!showPassword);
+    }
+   
+    return (
+        <div style={{backgroundColor:"#1D2743", padding:"100px"}}>
+            
+            <div className="signup-container">
+            <h2 className="header">SIGN UP NOW!</h2>
             <form onSubmit={handleSubmit}>
-                <div className="text-fields">
-                    <LogIn type="text"
-                        required
-                        placeholder="Name"
-                        className="sign-in-text"
-                        onChange={handleChange}
-                        name="displayName"
-                        value={displayName} />
-                    <LogIn type="email"
-                        required
-                        placeholder="Email"
-                        className='sign-in-text'
-                        onChange={handleChange}
-                        name="email"
-                        value={email} />
+            <div className="text-fields">
+            <LogIn type="text"
+                    required
+                    placeholder="Name"
+                    className="sign-in-text"
+                    onChange={handleChange}
+                    name="displayName"
+                    value={displayName} />
+                <LogIn type="email"
+                    required
+                    placeholder="Email" 
+                    className='sign-in-text'
+                    onChange={handleChange}
+                    name="email"
+                    value={email} />
                     <div className="password-container">
-                        <LogIn type={showPassword ? 'text' : 'password'}
-                            required
-                            className='sign-in-text'
-                            placeholder="Password"
-                            onChange={handleChange}
-                            name="password"
-                            value={password} />
-                        <Icon
-                            className="eye-icon"
-                            icon={showPassword ? eyeOff : eye}
-                            onClick={togglePassword} />
+                    <LogIn type={showPassword ? 'text' : 'password'}
+                    required
+                    className='sign-in-text'
+                    placeholder="Password"
+                    onChange={handleChange}
+                    name="password"
+                    value={password} />
+                <Icon
+                    className="eye-icon"
+                    icon={showPassword ? eyeOff : eye}
+                    onClick={togglePassword} />
                     </div>
-
-                    <LogIn type='password'
-                        required
-                        placeholder="Confirm Password"
-                        onChange={handleChange}
-                        className='sign-in-text'
-                        name="confirmPassword"
-                        value={confirmPassword} />
-                </div>
+                
+                <LogIn type='password'
+                    required
+                    placeholder="Confirm Password"
+                    onChange={handleChange}
+                    className='sign-in-text'
+                    name="confirmPassword"
+                    value={confirmPassword} />
+            </div>
+            <div className="password-check-list-container">
+            <PasswordChecklist
+                    className="password-check-list"
+                    rules={['minLength', 'specialChar', 'capital', 'number', 'match']}
+                    minLength={8}
+                    value={password}
+                    valueAgain={confirmPassword}
+                    messages={{
+                        minLength: 'Password has more than 8 characters.',
+                        specialChar: 'Password has special characters.',
+                        number: 'Password has a number.',
+                        capital: 'Password has a capital letter.',
+                        match: 'Passwords match.',
+                    }}
+                    onChange={(isValid) => { setPasswordValid(isValid) }}
+                />
+            </div>
+               
                 <p className="error-message">{errorMessages}</p>
-                <div className="password-check-list-container">
-                    <PasswordChecklist
-                        className="password-check-list"
-                        rules={['minLength', 'specialChar', 'capital', 'number', 'match']}
-                        minLength={8}
-                        value={password}
-                        valueAgain={confirmPassword}
-                        messages={{
-                            minLength: 'Password has more than 8 characters.',
-                            specialChar: 'Password has special characters.',
-                            number: 'Password has a number.',
-                            capital: 'Password has a capital letter.',
-                            match: 'Passwords match.',
-                        }}
-                        onChange={(isValid) => { setPasswordValid(isValid) }}
-                    />
-                </div>
-                <button type="submit" className="submit-button">Submit</button>
-
+                <button type="submit" className="submit-button" >
+                    SUBMIT
+                    </button>
+              
             </form>
+            </div>
         </div>
-    </div>
-)
-};
+    )
+}
 
 export default SignUpForm;
