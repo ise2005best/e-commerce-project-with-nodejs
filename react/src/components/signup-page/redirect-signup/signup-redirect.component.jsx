@@ -1,21 +1,42 @@
 import { useState } from "react";
-import EmailPicture from '../../../static/imag12.avif';
 import InstagramIcon from '../../../static/instagram.png';
 import TwitterIcon from '../../../static/twitter.png';
 import WhatsappIcon from '../../../static/whatsapp.png';
 import Email from "../../../static/email.gif"
 import './signup-redirect.styles.scss';
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 const RedirectSignUp = () => {
+    const navigate = useNavigate();
     const [errorMessages, setErrorMessages] = useState('');
-    // const emailVerification = async () =>{
-    //     try {
-    //         await verifyEmail(user) 
-    //        setErrorMessages('Email verification has been sent successfully')
-    //     } catch (error) {
-    //         console.error('Error sending verification email', error)
-    //         setErrorMessages('An error occurred while sending email verification')
-    //     }
-    // }
+    const [otp, setOtp] = useState('');
+    const handleOtpChange = (event) => {
+        setOtp(event.target.value);
+    }
+    const handleSubmit = async(event)=>{
+        event.preventDefault();
+        const response = await axios.post('http://localhost:8002/verify-email', otp)
+        if(response.data === 'Successful'){
+            navigate('/')
+        }else if (response.data === 'Invalid otp'){
+            setErrorMessages('Invalid otp')
+        }else{
+            setErrorMessages('An error occurred')
+        }
+    }
+    const resendOtp = async()=>{
+        const response = await axios.post('http://localhost:8002/verify-email/resend-otp', otp)
+        try{
+            if(response.data ==='Succesful'){
+                setErrorMessages("Otp resent")
+            }else{
+                setErrorMessages("An error occurred")
+            }
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
     return (
         <div style={{ backgroundColor: "#1d2743" }}>
             <div className="container">
@@ -29,13 +50,23 @@ const RedirectSignUp = () => {
                         Thank you for signing up with ISESEN
                     </h1>
                     <p className="error-message"> {errorMessages}</p>
-                    < button
-                        type='button'
-                        className="email-button"
-                    >
-                        Verify email address
-                    </button>
-
+                    <form onSubmit={handleSubmit}>
+                        <label> Enter Otp </label>
+                        <input
+                            placeholder="Otp"
+                            value={otp}
+                            type='number'
+                            name="otp"
+                            required
+                            onChange={handleOtpChange}
+                            className="input" />
+                        <button type='submit' className="button">
+                            Submit
+                        </button>
+                    </form>
+                        <Link className="forget-password-button" onClick={resendOtp} >
+                        Forget Password
+                        </Link>
                     <div className="icons">
                         <img src={WhatsappIcon}
                             alt="whatsapp-icon"

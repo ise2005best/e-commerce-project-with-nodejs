@@ -2,21 +2,37 @@ const express = require('express');
 const db = require('../config/db.config');
 const router = express.Router();
 router.post('/verify-email', (req,res)=>{
-    const emailToken = req.body.emailToken;
-
-    if(!emailToken){
-        res.json("Email token not found")
-    }
-    const checkDbForUser = 'SELECT * FROM users where `token` = ?'
-    db.query(checkDbForUser, [emailToken],(err,data)=>{
+    const currentTimeUserInputedOtp = new Date().toISOString().slice(0,19).replace('T', ' ');
+    const otp = req.otp;
+    const checkuserOtpInDB = 'SELECT * FROM usersVerification WHERE `otp` = ? AND `expired_at` >= ? '
+    const values = [otp, currentTimeUserInputedOtp]
+    db.query(checkuserOtpInDB, [values], (err,data)=>{
         if(err){
             console.log(err)
-            console.log("Email token not found in db")
+            res.json("Invalid otp")
         }if(data.length > 0){
-           const updateUserVerification = 'UPDATE users SET verified = 1, token = NULL WHERE email = ?'
-           db.query(updateUserVerification, [data.length], (data,err)=>{
-            
-           })
+            const usersID = data[0].usersID
+            const updateUsersTable = 'UPDATE users SET `verified` = 1 WHERE `usersID` = ? '
+            db.query(updateUsersTable, [usersID], (err,data)=>{
+                if(err){
+                    console.log(err);
+                    res.json("An error occurred")
+                }if(data){
+                    const deleteOtpFromTable = 'UPDATE usersVerification SET `otp` = NULL WHERE `usersID` = ?'
+                    db.query(deleteOtpFromTable, [usersID],(err,data)=>{
+                        if(err){
+                            console.log(err)
+                            res.json("An error occurred")
+                        }if(data){
+                            res.json("Successful");
+                        }
+                    } )
+                }
+            })
+        }else{
+            res.json('Invalid otp')
         }
     })
 })
+
+module.exports = router;

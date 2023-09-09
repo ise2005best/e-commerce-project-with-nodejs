@@ -3,43 +3,36 @@ const router = express.Router();
 const saltRoundsForBcrypt = 10;
 const bcrypt = require('bcrypt');
 const db = require('../config/db.config');
-const mail = require('../models/emailVerification.service')
-
+const userEmailVerification = require('../models/emailVerification.service')
 const addOtpToDB = require('../models/passwordReset.service')
-router.post('/sign-up',(req,res)=>{
+router.post('/sign-up', (req, res) => {
     const userPlainPassword = req.body.password;
     const userEmail = req.body.email;
     const userDisplayName = req.body.displayName;
-    // const verified = false
     bcrypt.hash(userPlainPassword, saltRoundsForBcrypt, (err, hash) => {
         if (err) {
-            console.error(err)
+            res.json('Error hashing password')
         }
         else {
             const sql = "SELECT * FROM users WHERE `email` = ?";
             db.query(sql, [userEmail], (err, data) => {
                 if (err) {
                     console.log(err);
-                    return res.json("Error");
                 }
                 if (data.length > 0) {
-                    return res.json("Email already exists");
+                    res.json("Email already exists");
                 } else {
                     const insertSql = "INSERT INTO users (`name`, `email`, `password`, `verified`) VALUES (?, ?, ?, ?)";
                     const values = [
-                       userDisplayName, userEmail, hash, 0,
+                        userDisplayName, userEmail, hash, 0,
                     ];
-                    db.query(insertSql, values, (result,insertErr) => {
-                        if(result){
-                            console.log(result)
-                            return res.json("An error occurred ")
-                        }
+                    db.query(insertSql, values, (insertErr) => {
                         if (insertErr) {
                             console.error(insertErr);
-                            return res.json('Email already exists');
-                        } else {
-                             mail(userEmail)
-                            return res.json('Success');
+                        }
+                        else {
+                            userEmailVerification(userEmail, userDisplayName)
+                            res.json('Success');
                         }
                     });
                 }
@@ -48,7 +41,7 @@ router.post('/sign-up',(req,res)=>{
 
     })
 })
-router.post('/sign-in',(req,res)=>{
+router.post('/sign-in', (req, res) => {
     const userEmail = req.body.email;
     const userPlainPassword = req.body.password;
 
@@ -74,21 +67,31 @@ router.post('/sign-in',(req,res)=>{
         }
     })
 })
-router.post('/forget-password', (req,res)=>{
+router.post('/forget-password', (req, res) => {
     const userEmail = req.body.email;
-    const checkEmailsql = "SELECT * FROM users WHERE `email` = ? ";
-    db.query(checkEmailsql, [userEmail], (err, data) => {
+    const getuserName = "SELECT Name FROM users WHERE `email` = ?"
+    db.query(getuserName, [userEmail], (err, data) => {
         if (err) {
             console.log(err)
-            res.status(500).json({ error: 'An error occurred' })
-        }
-        if (data.length > 0) {
-            addOtpToDB.handleOtpSubmission(userEmail)
-            return res.json('ok')
-        } else {
+            res.json("An error occurred")
+        } if (data.length > 0) {
+            const userDisplayName = data[0].Name;
+            const checkEmailsql = "SELECT * FROM users WHERE `email` = ? ";
+            db.query(checkEmailsql, [userEmail], (err, data) => {
+                if (err) {
+                    console.log(err)
+                    res.status(500).json({ error: 'An error occurred' })
+                }
+                if (data.length > 0) {
+                    addOtpToDB.handleOtpSubmission(userEmail,userDisplayName)
+                    return res.json('ok')
+                } 
+            })
+        }else {
             return res.json("Email does not exists in our database")
         }
     })
+
 })
 
 module.exports = router

@@ -5,7 +5,6 @@ import { Icon } from 'react-icons-kit';
 import { eyeOff } from 'react-icons-kit/feather/eyeOff';
 import { eye } from 'react-icons-kit/feather/eye'
 import LogIn from "../../login-form/login";
-import picture from '../../../static/assortment-pieces-cake.jpg';
 import axios from 'axios';
 import './signup-form.styles.scss';
 const initialFields = {
@@ -38,14 +37,14 @@ const SignUpForm = () => {
         event.preventDefault();
         try {
             const response = await axios.post('http://localhost:8002/sign-up', fields);
+            console.log(response);
             if (response.data === 'Email already exists') {
                 setErrorMessages("Email already exists");
             } else if(response.data === 'Success'){
-                navigate('/')
-            }
-            else {
+                axios.post('http://localhost:8002/verify-email');
                 navigate('/thank-you-for-signing-up-with-us');
             }
+           
         } catch (error) {
             console.error(error);
         }

@@ -1,7 +1,6 @@
 import { Fragment, useContext } from "react";
 import { Link } from "react-router-dom";
 import { userContext } from '../../context/context.js';
-import { ReactComponent as Logo1 } from '../../static/crown.svg';
 import './navbar.styles.scss'
 const NavBar = () => {
 

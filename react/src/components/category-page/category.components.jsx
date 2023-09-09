@@ -225,7 +225,7 @@ const MainPage = () => {
     slidesToShow: 1,
     slidesToScroll: 1,
     autoplay: true, // Auto-animate the slider
-    autoplaySpeed: 2000, // Set the time between slides (in milliseconds)
+    autoplaySpeed: 3000, // Set the time between slides (in milliseconds)
   };
 
   return (

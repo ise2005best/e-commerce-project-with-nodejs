@@ -10,7 +10,7 @@ const MAIL_SETTINGS = {
     }
 }
 const transporter = nodeMailer.createTransport(MAIL_SETTINGS);
-module.exports.sendOtpMail = async (email) => {
+module.exports.sendOtpMail = async (email, userDisplayName) => {
     try {
         let passwordResetInformation = await transporter.sendMail({
             from: process.env.MAIL_SENDER,
@@ -21,7 +21,7 @@ module.exports.sendOtpMail = async (email) => {
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Email Verification</title>
+                <title>RESET PASSWORD </title>
                 <link href="https://fonts.googleapis.com/css2?family=Tilt+Prism&display=swap" rel="stylesheet">
                 <link href="https://fonts.googleapis.com/css2?family=El+Messiri&display=swap" rel="stylesheet">
             </head>
@@ -29,7 +29,7 @@ module.exports.sendOtpMail = async (email) => {
                 <div style="font-family: 'Tilt Prism', sans-serif; font-size: 55px; color: #FE9000; text-align: center; margin-bottom: 30px;">ISESEN</div>
                 <div style="max-width: 600px; margin: auto; padding: 20px 40px; background-color: #F5FBEF; border-radius: 5px; box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);">
                     <h1 style="color: #333; font-size: 30px;">Email Verification</h1>
-                    <p style="line-height: 7px;">Hello ,</p>
+                    <p style="line-height: 7px;">Hello ${userDisplayName}, </p>
                     <p >We received a request to reset your password. Please use the following one-time password (OTP) to verify your email and reset your password:</p>
                     <p style=" line-height: 7px; font-size: 18px; font-weight: bold; color: #1D2743;">${otp}</p>
                     <p style=" line-height: 7px;" you did not request a password reset, you can safely ignore this email.</p>
