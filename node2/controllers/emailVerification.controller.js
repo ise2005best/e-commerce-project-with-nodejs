@@ -3,10 +3,10 @@ const db = require('../config/db.config');
 const router = express.Router();
 router.post('/verify-email', (req,res)=>{
     const currentTimeUserInputedOtp = new Date().toISOString().slice(0,19).replace('T', ' ');
-    const otp = req.otp;
+    const otp = req.body.otp;
     const checkuserOtpInDB = 'SELECT * FROM usersVerification WHERE `otp` = ? AND `expired_at` >= ? '
     const values = [otp, currentTimeUserInputedOtp]
-    db.query(checkuserOtpInDB, [values], (err,data)=>{
+    db.query(checkuserOtpInDB, values, (err,data)=>{
         if(err){
             console.log(err)
             res.json("Invalid otp")

@@ -27,10 +27,7 @@ const App = () => {
             <Route path="sign-in" element={<SignInPage />} />
             <Route path="forget-password" element={<ForgetPassword />} />
             <Route path="reset-password" element={<UpdatePassword />} />
-            <Route
-              path="thank-you-for-signing-up-with-us"
-              element={<RedirectSignUp />}
-            />
+            <Route path="verify-email" element={<RedirectSignUp />} />
             <Route path="sign-up" element={<SignUpForm />} />
           </Routes>
         </CSSTransition>

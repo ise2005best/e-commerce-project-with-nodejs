@@ -3,8 +3,9 @@ const router = express.Router();
 const saltRoundsForBcrypt = 10;
 const bcrypt = require('bcrypt');
 const db = require('../config/db.config');
-const userEmailVerification = require('../models/emailVerification.service')
-const addOtpToDB = require('../models/passwordReset.service')
+const handleOtp = require('../models/emailVerification.service')
+const addOtpToDB = require('../models/passwordReset.service');
+const otp = require('../utils/handleOtp');
 router.post('/sign-up', (req, res) => {
     const userPlainPassword = req.body.password;
     const userEmail = req.body.email;
@@ -31,7 +32,7 @@ router.post('/sign-up', (req, res) => {
                             console.error(insertErr);
                         }
                         else {
-                            userEmailVerification(userEmail, userDisplayName)
+                           handleOtp(userEmail, userDisplayName, otp);                          
                             res.json('Success');
                         }
                     });

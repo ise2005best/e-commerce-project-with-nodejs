@@ -65,7 +65,7 @@ const RedirectSignUp = () => {
                         </button>
                     </form>
                         <Link className="forget-password-button" onClick={resendOtp} >
-                        Forget Password
+                    Resend Otp
                         </Link>
                     <div className="icons">
                         <img src={WhatsappIcon}
