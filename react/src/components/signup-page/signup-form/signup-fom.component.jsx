@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import PasswordChecklist from "react-password-checklist";
 import { Icon } from 'react-icons-kit';
 import { eyeOff } from 'react-icons-kit/feather/eyeOff';
@@ -70,7 +70,8 @@ const SignUpForm = () => {
                         className="sign-in-text"
                         onChange={handleChange}
                         name="displayName"
-                        value={displayName} />
+                        value={displayName} 
+                        />
                     <LogIn type="email"
                         required
                         placeholder="Email"
@@ -118,7 +119,7 @@ const SignUpForm = () => {
                         onChange={(isValid) => { setPasswordValid(isValid) }}
                     />
                 </div>
-                <button type="submit" className="submit-button">Submit</button>
+                <button type="submit" className="submit-button"><Link className="link" to={"/sign-in-otp"}>Submit</Link></button>
 
             </form>
             </div>

@@ -50,7 +50,7 @@ const RedirectSignUp = () => {
                         Thank you for signing up with ISESEN
                     </h1>
                     <p className="error-message"> {errorMessages}</p>
-                    <form onSubmit={handleSubmit}>
+                    {/* <form onSubmit={handleSubmit}>
                         <label> Enter Otp </label>
                         <input
                             placeholder="Otp"
@@ -66,7 +66,7 @@ const RedirectSignUp = () => {
                     </form>
                         <Link className="forget-password-button" onClick={resendOtp} >
                         Forget Password
-                        </Link>
+                        </Link> */}
                     <div className="icons">
                         <img src={WhatsappIcon}
                             alt="whatsapp-icon"
