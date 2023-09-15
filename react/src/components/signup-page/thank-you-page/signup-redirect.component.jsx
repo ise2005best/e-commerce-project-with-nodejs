@@ -2,7 +2,7 @@ import { useState } from "react";
 import InstagramIcon from '../../../static/instagram.png';
 import TwitterIcon from '../../../static/twitter.png';
 import WhatsappIcon from '../../../static/whatsapp.png';
-import Email from "../../../static/email.gif"
+import Email from "../../../static/cake.gif"
 import './signup-redirect.styles.scss';
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";

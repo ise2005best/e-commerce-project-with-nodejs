@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import './OtpPage.css';
-import 'font-awesome/css/font-awesome.min.css';
+import './OtpPage.scss';
+// import 'font-awesome/css/font-awesome.min.css';
 import { Link } from 'react-router-dom';
 
 function OtpPage() {
@@ -36,7 +36,6 @@ function OtpPage() {
   },[timer]);
 
   const handleResendClick = () => {
-    // Simulate sending a new OTP here.
     // Reset the timer.
     setTimer(60);
     setIsResendDisabled(true);
@@ -64,7 +63,7 @@ function OtpPage() {
 
   const handleVerifyClick = () => {
     const enteredOtp = otp.join('');
-    // You can implement your OTP verification logic here
+    //otp verification logic should be here 
     console.log('Entered OTP:', enteredOtp);
   };
 

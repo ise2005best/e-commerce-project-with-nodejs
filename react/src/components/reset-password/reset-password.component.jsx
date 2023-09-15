@@ -63,7 +63,7 @@ const UpdatePassword = () => {
         }
     }
     return (
-        <div style={{ backgroundColor: "#1D2743", padding: "40px" }}>
+        <div className="main" >
             <div className="update-password-container">
                 <h2 className="header">UPDATE PASSWORD</h2>
                 <form onSubmit={submitNewPassword}>

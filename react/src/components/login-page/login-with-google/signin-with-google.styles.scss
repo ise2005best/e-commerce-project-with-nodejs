@@ -9,7 +9,7 @@
 .texts-divider {
     position: relative;
     text-align: center;
-    max-width: 500px;
+    max-width: 200px;
     margin: auto;
     margin-bottom: 30px;
 }
@@ -41,15 +41,17 @@ content:" ";
 }
 
 .google-button {
+    color: #172447;
     align-items: center;
     padding: 10px 15px;
     background-color: #fff;
-    border: 1px solid #ccc;
+    border: 1px solid #d3d3d3;
     border-radius: 5px;
     cursor: pointer;
     width: 30vh;
     font-size: large;
     font-weight: 300;
+  
 }
 
 .google-icon {
@@ -61,4 +63,30 @@ content:" ";
 .error-messages {
     color: red;
     margin-top: 10px;
+}
+
+@media (max-width:550px ){
+    .texts-divider::before{
+        content:" ";
+        display: block;
+        height: 1px;
+        width: 70px;
+        position: absolute;
+        margin-left: -55%;
+        top: 50%;
+        left: 0;
+        background-color: #808080;
+        
+    } 
+    .texts-divider::after{
+        content:" ";
+          height: 1px;
+          width: 70px;
+          background-color:#808080;
+          display: block;
+          position: absolute;
+          margin-right: -55%;
+          top: 50%;
+          right: 0;
+        }
 }

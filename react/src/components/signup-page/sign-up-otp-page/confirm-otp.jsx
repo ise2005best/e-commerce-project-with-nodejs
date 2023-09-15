@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import './OtpPage.css';
-import 'font-awesome/css/font-awesome.min.css';
 import { Link } from 'react-router-dom';
 
 function OTPPage() {
@@ -84,7 +83,7 @@ function OTPPage() {
           />
         ))}
       </div>
-      <button onClick={handleVerifyClick} ><Link className='Link' to={"/reset-password"}>Verify OTP</Link></button>
+      <button onClick={handleVerifyClick} ><Link className='Link' to={"/thank-you-for-signing-up-with-us"}>Verify OTP</Link></button>
       <div className="timer">{`${Math.floor(timer / 60)}:${(timer % 60)
         .toString()
         .padStart(2, '0')}`}</div>

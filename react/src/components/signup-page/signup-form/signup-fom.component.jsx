@@ -25,7 +25,7 @@ const SignUpForm = () => {
     const resetForm = () => {
         setFields(initialFields);
     }
- 
+
 
 
     const handleChange = (event) => {
@@ -40,11 +40,11 @@ const SignUpForm = () => {
             console.log(response);
             if (response.data === 'Email already exists') {
                 setErrorMessages("Email already exists");
-            } else if(response.data === 'Success'){
+            } else if (response.data === 'Success') {
                 axios.post('http://localhost:8002/verify-email');
                 navigate('/thank-you-for-signing-up-with-us');
             }
-           
+
         } catch (error) {
             console.error(error);
         }
@@ -56,72 +56,75 @@ const SignUpForm = () => {
     const togglePassword = () => {
         setShowPassword(!showPassword);
     }
-   
+
     return (
-        <div style={{backgroundColor:"#1D2743", padding:"100px"}}>
-            
+        <div style={{
+            backgroundColor: "#1D2743",
+            paddingBottom: "70px",
+            paddingTop: "70px"
+        }}>
+
             <div className="signup-container">
-            <h2 className="header">SIGN UP NOW!</h2>
-            <form onSubmit={handleSubmit}>
-                <div className="text-fields">
-                    <LogIn type="text"
-                        required
-                        placeholder="Name"
-                        className="sign-in-text"
-                        onChange={handleChange}
-                        name="displayName"
-                        value={displayName} 
-                        />
-                    <LogIn type="email"
-                        required
-                        placeholder="Email"
-                        className='sign-in-text'
-                        onChange={handleChange}
-                        name="email"
-                        value={email} />
-                    <div className="password-container">
-                        <LogIn type={showPassword ? 'text' : 'password'}
+                <h2 className="header">SIGN UP NOW!</h2>
+                <form onSubmit={handleSubmit}>
+                    <div className="text-fields">
+                        <LogIn 
                             required
+                            placeholder="Name"
                             className='sign-in-text'
-                            placeholder="Password"
                             onChange={handleChange}
-                            name="password"
-                            value={password} />
-                        <Icon
-                            className="eye-icon"
-                            icon={showPassword ? eyeOff : eye}
-                            onClick={togglePassword} />
+                            name="email"
+                            value={email} />
+                        <LogIn type="email"
+                            required
+                            placeholder="Email"
+                            className='sign-in-text'
+                            onChange={handleChange}
+                            name="email"
+                            value={email} />
+                        <div className="password-container">
+                            <LogIn type={showPassword ? 'text' : 'password'}
+                                required
+                                className='sign-in-text'
+                                placeholder="Password"
+                                onChange={handleChange}
+                                name="password"
+                                value={password} />
+                            <Icon
+                                className="eye-icon"
+                                icon={showPassword ? eyeOff : eye}
+                                onClick={togglePassword} />
+                        </div>
+
+                        <LogIn type='password'
+                            required
+                            placeholder="Confirm Password"
+                            onChange={handleChange}
+                            className='sign-in-text'
+                            name="confirmPassword"
+                            value={confirmPassword} />
                     </div>
+                    <p className="error-message">{errorMessages}</p>
+                    <div className="password-check-list-container">
+                        <PasswordChecklist
+                            className="password-check-list"
+                            rules={['minLength', 'specialChar', 'capital', 'number', 'match']}
+                            minLength={8}
+                            value={password}
+                            valueAgain={confirmPassword}
+                            messages={{
+                                minLength: 'Password has more than 8 characters.',
+                                specialChar: 'Password has special characters.',
+                                number: 'Password has a number.',
+                                capital: 'Password has a capital letter.',
+                                match: 'Passwords match.',
+                            }}
+                            onChange={(isValid) => { setPasswordValid(isValid) }}
+                        />
+                    </div>
+                    <button type="submit" className="submit-button"><Link className="link" to={"/sign-in-otp"}>Submit</Link></button>
 
-                    <LogIn type='password'
-                        required
-                        placeholder="Confirm Password"
-                        onChange={handleChange}
-                        className='sign-in-text'
-                        name="confirmPassword"
-                        value={confirmPassword} />
-                </div>
-                <p className="error-message">{errorMessages}</p>
-                <div className="password-check-list-container">
-                    <PasswordChecklist
-                        className="password-check-list"
-                        rules={['minLength', 'specialChar', 'capital', 'number', 'match']}
-                        minLength={8}
-                        value={password}
-                        valueAgain={confirmPassword}
-                        messages={{
-                            minLength: 'Password has more than 8 characters.',
-                            specialChar: 'Password has special characters.',
-                            number: 'Password has a number.',
-                            capital: 'Password has a capital letter.',
-                            match: 'Passwords match.',
-                        }}
-                        onChange={(isValid) => { setPasswordValid(isValid) }}
-                    />
-                </div>
-                <button type="submit" className="submit-button"><Link className="link" to={"/sign-in-otp"}>Submit</Link></button>
-
-            </form>
+                </form>
             </div>
         </div>
     )
