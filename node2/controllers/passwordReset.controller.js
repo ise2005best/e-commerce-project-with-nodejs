@@ -58,22 +58,19 @@ router.post('/password-reset', (req, res) => {
     })
 })
 
-router.post('/password-reset/resent-otp', (req, res) => {
-    const userEmail = req.body.email;
-    const getuserNameFromDB = 'SELECT NAME from users WHERE `email` = ?'
-    db.query(getuserNameFromDB, [userEmail], (err, data) => {
-        if (err) {
-            console.log(err);
-            res.json("An error occurred")
-        } if (data) {
-            const userDisplayName = data[0].Name;
-            addOtpToDb.handleOtpSubmission(userEmail, userDisplayName);
-            res.json('Succesful');
-        }
-        else {
-            res.json("Error");
-        }
+router.post('/password-reset/resend-otp',(req, res) => {
+    const userEmail = req.cookies.otpUserEmail;
+    const checkForUserName = 'SELECT Name FROM users where `email` = ?'
+    db.query(checkForUserName, [userEmail], (err, data)=>{
+        if(err){
+            res.json("An error occured")
+        }if(data){
+            const userDisplayName = data[0].Name
+                addOtpToDb.handleOtpSubmission(userEmail,userDisplayName)
+                res.json('Successful')
+            } 
     })
+   
 
 
 })

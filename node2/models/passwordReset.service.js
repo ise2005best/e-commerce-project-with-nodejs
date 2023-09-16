@@ -14,8 +14,8 @@ module.exports.handleOtpSubmission = async (userEmail, userDisplayName) => {
             const values = [
                 usersID, otp, userEmail, currentTime, expiredTime
             ]
-            const addOTPToDatabase = "INSERT INTO password_reset (`usersID` , `otp`, `email`, `created_at`, `expired_at`) VALUES (?)";
-            db.query(addOTPToDatabase, [values], (err) => {
+            const addOTPToDatabase = "INSERT INTO password_reset (`usersID` , `otp`, `email`, `created_at`, `expired_at`) VALUES (?, ?, ?, ?, ?)";
+            db.query(addOTPToDatabase, values, (err) => {
                 if (err) {
                     console.log(err)
                 } else {

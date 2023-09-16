@@ -15,7 +15,7 @@ const RedirectSignUp = () => {
     }
     const handleSubmit = async(event)=>{
         event.preventDefault();
-        const response = await axios.post('http://localhost:8002/verify-email', otp)
+        const response = await axios.post('http://localhost:8002/verify-email', {otp}, {withCredentials: true})
         if(response.data === 'Successful'){
             navigate('/')
         }else if (response.data === 'Invalid otp'){
@@ -25,7 +25,7 @@ const RedirectSignUp = () => {
         }
     }
     const resendOtp = async()=>{
-        const response = await axios.post('http://localhost:8002/verify-email/resend-otp', otp)
+        const response = await axios.post('http://localhost:8002/verify-email/resend-otp', undefined,{withCredentials:true})
         try{
             if(response.data ==='Succesful'){
                 setErrorMessages("Otp resent")

@@ -22,12 +22,6 @@ const SignUpForm = () => {
     const { displayName, email, password, confirmPassword } = fields;
     const navigate = useNavigate();
 
-    const resetForm = () => {
-        setFields(initialFields);
-    }
- 
-
-
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFields({ ...fields, [name]: value });
@@ -36,23 +30,17 @@ const SignUpForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8002/sign-up', fields);
-            console.log(response);
+            const response = await axios.post('http://localhost:8002/sign-up', fields, {withCredentials:true}); // withCredentials are set to true to allow cookies
             if (response.data === 'Email already exists') {
                 setErrorMessages("Email already exists");
             } else if(response.data === 'Success'){
-                axios.post('http://localhost:8002/verify-email');
-                navigate('/thank-you-for-signing-up-with-us');
+                navigate('/verify-email');
             }
            
         } catch (error) {
             console.error(error);
         }
     };
-
-
-
-
     const togglePassword = () => {
         setShowPassword(!showPassword);
     }

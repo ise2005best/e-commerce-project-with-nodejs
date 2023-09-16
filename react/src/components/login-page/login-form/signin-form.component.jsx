@@ -17,9 +17,6 @@ const SignInForm = () => {
     const [showPassword, setShowPassword] = useState(false);
 const [errorMessages, setErrorMessages] = useState('')
     const { email, password } = fields;
-    const resetForm = () => {
-        setFields(initialFields);
-    }
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFields({ ...fields, [name]: value });
@@ -46,7 +43,8 @@ const [errorMessages, setErrorMessages] = useState('')
     }
 
     return (
-        <div>
+        <div className="sign-in">
+           
             <h1 className="login"> LOGIN </h1>
             <form onSubmit={handleSubmit}>
                 <LogIn type="email"

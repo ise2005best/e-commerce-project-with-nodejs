@@ -11,7 +11,7 @@ const handleEmailChange = (event) =>{
 const navigate = useNavigate()
 const handleSubmit =(event)=>{
     event.preventDefault()
-    axios.post('http://localhost:8002/forget-password',{email: email } )
+    axios.post('http://localhost:8002/forget-password',{email}, {withCredentials: true})
     .then(res=>{
         if(res.data === "Email does not exists in our database"){
             setErrorMessages('Email does not exists in our database')

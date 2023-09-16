@@ -1,12 +1,10 @@
-const otpGenerator = require('otp-generator');
-
-const OTP_LENGTH = 6
-const OTP_CONFIG = {
-    digits: true,
-    lowerCaseAlphabets: false,
-    upperCaseAlphabets: false,
-    specialChars: false
+const generteOtp = () =>{
+    var digits = '1234567890';
+    let otp = '';
+    for (let i = 0; i < 6; i++) {
+        otp += digits[Math.floor(Math.random() * 10)];
+    }
+    return otp;
 }
-    const otp = otpGenerator.generate(OTP_LENGTH, OTP_CONFIG);
-   
+const otp = generteOtp()
 module.exports = otp;

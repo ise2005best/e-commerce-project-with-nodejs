@@ -33,7 +33,7 @@ const UpdatePassword = () => {
         event.preventDefault();
 
         if (passwordValid) {
-           const response = await  axios.post('http://localhost:8002/password-reset', fields)
+           const response = await  axios.post('http://localhost:8002/password-reset', fields, {withCredentials:true})
                 try{
                     if(response.data === 'Succesful'){
                         navigate('/sign-in')
@@ -50,7 +50,7 @@ const UpdatePassword = () => {
         }
     }
     const handleResetOtp = async ()=>{
-        const response = await axios.post('http://localhost:8002/password-reset/resend-otp', fields)
+        const response = await axios.post('http://localhost:8002/password-reset/resend-otp', undefined, {withCredentials: true})
         try{
             if(response.data ==='Succesful'){
                 setErrorMessages("Otp resent")

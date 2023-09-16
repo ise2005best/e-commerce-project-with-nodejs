@@ -32,13 +32,8 @@ const NavBar = () => {
                     <Link className="nav-link" to={'/sign-in'} style={{ marginRight: '40px' }}>
                         SIGN IN
                     </Link>
-
-
                 </div>
-
             </div>
-
-
         </Fragment>
 
     )

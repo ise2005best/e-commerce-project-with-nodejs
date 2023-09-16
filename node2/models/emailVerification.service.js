@@ -11,8 +11,8 @@ const handleEmailVerification = async (userEmail, userDisplayName, otp) =>{
             if(data.length > 0){
                 const userID = data[0].usersID
                 const values = [userID , otp, currentTime, expiredTime];
-                const insertStringInDB = 'INSERT INTO usersVerification (`usersID`,`otp`, `created_at` , `expired_at`) VALUES (?, ?, ?, ?)'
-                 db.query(insertStringInDB, values, (err)=>{
+                const insertStringInDB = 'INSERT INTO usersVerification (`usersID`,`otp`, `created_at` , `expired_at`) VALUES (?)'
+                 db.query(insertStringInDB, [values], (err)=>{
                     if(err){
                         console.log(err)
                     }

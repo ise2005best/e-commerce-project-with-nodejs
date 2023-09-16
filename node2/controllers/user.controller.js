@@ -10,6 +10,8 @@ router.post('/sign-up', (req, res) => {
     const userPlainPassword = req.body.password;
     const userEmail = req.body.email;
     const userDisplayName = req.body.displayName;
+    res.cookie('usersEmail', userEmail, {maxAge: 10000000, httpOnly: true});
+    res.cookie('usersDisplayName', userDisplayName,  {maxAge: 10000000, httpOnly: true});
     bcrypt.hash(userPlainPassword, saltRoundsForBcrypt, (err, hash) => {
         if (err) {
             res.json('Error hashing password')
@@ -45,7 +47,7 @@ router.post('/sign-up', (req, res) => {
 router.post('/sign-in', (req, res) => {
     const userEmail = req.body.email;
     const userPlainPassword = req.body.password;
-
+    res.cookie('otpUserEmail', userEmail, {maxAge: 10000000, httpOnly: true});
     const checkEmailsql = "SELECT * FROM users WHERE `email` = ? ";
     db.query(checkEmailsql, [userEmail], (error, data) => {
         if (error) {
@@ -70,6 +72,7 @@ router.post('/sign-in', (req, res) => {
 })
 router.post('/forget-password', (req, res) => {
     const userEmail = req.body.email;
+    res.cookie('otpUserEmail', userEmail, {maxAge: 10000000, httpOnly: true})
     const getuserName = "SELECT Name FROM users WHERE `email` = ?"
     db.query(getuserName, [userEmail], (err, data) => {
         if (err) {
@@ -77,6 +80,7 @@ router.post('/forget-password', (req, res) => {
             res.json("An error occurred")
         } if (data.length > 0) {
             const userDisplayName = data[0].Name;
+            res.cookie('usersDisplayName', userDisplayName)
             const checkEmailsql = "SELECT * FROM users WHERE `email` = ? ";
             db.query(checkEmailsql, [userEmail], (err, data) => {
                 if (err) {
