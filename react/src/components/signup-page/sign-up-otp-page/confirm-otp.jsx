@@ -3,7 +3,7 @@ import './OtpPage.css';
 import { Link } from 'react-router-dom';
 
 function OTPPage() {
-  const [otp, setOtp] = useState(["", "", "", "", "", ""]);
+  const [otp, setOtp] = useState(["", "", "", "", "", '']);
   const [timer, setTimer] = useState(60);
   const [isResendDisabled, setIsResendDisabled] = useState(true);
 
