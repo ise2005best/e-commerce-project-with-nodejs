@@ -5,7 +5,7 @@ import PasswordChecklist from "react-password-checklist";
 import { Icon } from 'react-icons-kit';
 import { eyeOff } from 'react-icons-kit/feather/eyeOff';
 import { eye } from 'react-icons-kit/feather/eye';
-import './update-password.styles.scss'; // Import your CSS file
+import './reset-password.styles.scss'; // Import your CSS file
 
 const UpdatePassword = () => {
     const navigate = useNavigate();
@@ -68,8 +68,8 @@ const UpdatePassword = () => {
                 <h2 className="header">UPDATE PASSWORD</h2>
                 <form onSubmit={submitNewPassword}>
                     <div className="text-fields">
-                        <label>OTP</label>
-                        <input
+                        {/* <label>OTP</label>
+                         <input
                             required
                             type='number'
                             name="otp"
@@ -80,7 +80,7 @@ const UpdatePassword = () => {
                         />
                         <Link className="forget-password-button" onClick={handleResetOtp}>
                             Resend Otp
-                        </Link>
+                        </Link> */} 
                         <label>New Password</label>
                         <div className="password-container">
                             <input

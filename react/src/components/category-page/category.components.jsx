@@ -3,7 +3,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useState ,useRef} from "react";
-import Footer from "../Footer-page/footer";
+import Footer from "../footer-page/footer";
 
 
 const MainPage = () => {

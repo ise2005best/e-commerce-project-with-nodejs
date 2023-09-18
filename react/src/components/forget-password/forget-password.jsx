@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./forgot-password.scss"
 const ForgetPassword = ()=>{
 const [email, setEmail] = useState('')
@@ -42,7 +42,7 @@ return (
                 />
                 <p>{errorMessages}</p>
                 <button type="submit" className="button">
-                    Submit
+                    <Link to={"/reset-otp"}>Submit</Link>
                 </button>
             </form>
         </div>
