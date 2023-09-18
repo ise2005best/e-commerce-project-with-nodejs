@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import PasswordChecklist from "react-password-checklist";
 import { Icon } from 'react-icons-kit';
 import { eyeOff } from 'react-icons-kit/feather/eyeOff';
@@ -12,10 +12,9 @@ const UpdatePassword = () => {
     const initialFields = {
         newPassword: '',
         confirmNewPassword: '',
-        otp: ''
     }
     const [fields, setFields] = useState(initialFields);
-    const { newPassword, confirmNewPassword, otp } = fields;
+    const { newPassword, confirmNewPassword } = fields;
     const [passwordValid, setPasswordValid] = useState(false);
     const [showPassword, setShowPassword] = useState(false);
     const [errorMessages, setErrorMessages] = useState('')
@@ -49,38 +48,12 @@ const UpdatePassword = () => {
             setErrorMessages("Password does not meet the criteria.");
         }
     }
-    const handleResetOtp = async ()=>{
-        const response = await axios.post('http://localhost:8002/password-reset/resend-otp', undefined, {withCredentials: true})
-        try{
-            if(response.data ==='Succesful'){
-                setErrorMessages("Otp resent")
-            }else{
-                setErrorMessages("An error occurred")
-            }
-        }
-        catch(err){
-            console.log(err)
-        }
-    }
     return (
         <div style={{ backgroundColor: "#1D2743", padding: "40px" }}>
             <div className="update-password-container">
                 <h2 className="header">UPDATE PASSWORD</h2>
                 <form onSubmit={submitNewPassword}>
                     <div className="text-fields">
-                        {/* <label>OTP</label>
-                         <input
-                            required
-                            type='number'
-                            name="otp"
-                            value={otp}
-                            onChange={handleChange}
-                            placeholder="Enter OTP"
-                            className="sign-in-text"
-                        />
-                        <Link className="forget-password-button" onClick={handleResetOtp}>
-                            Resend Otp
-                        </Link> */} 
                         <label>New Password</label>
                         <div className="password-container">
                             <input

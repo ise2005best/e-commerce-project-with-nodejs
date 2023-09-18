@@ -21,6 +21,7 @@ const SignUpForm = () => {
     const [errorMessages, setErrorMessages] = useState('');
     const { displayName, email, password, confirmPassword } = fields;
     const navigate = useNavigate();
+    localStorage.setItem('usersEmail',fields.email)
 
     const handleChange = (event) => {
         const { name, value } = event.target;
@@ -40,14 +41,14 @@ const SignUpForm = () => {
         } catch (error) {
             console.error(error);
         }
-    };
+    }
+
     const togglePassword = () => {
         setShowPassword(!showPassword);
     }
    
     return (
         <div style={{backgroundColor:"#1D2743", padding:"100px"}}>
-            
             <div className="signup-container">
             <h2 className="header">SIGN UP NOW!</h2>
             <form onSubmit={handleSubmit}>
@@ -108,7 +109,6 @@ const SignUpForm = () => {
                     />
                 </div>
                 <button type="submit" className="submit-button"><Link className="link" to={"/sign-in-otp"}>Submit</Link></button>
-
             </form>
             </div>
         </div>

@@ -5,22 +5,30 @@ import "./forgot-password.scss"
 const ForgetPassword = ()=>{
 const [email, setEmail] = useState('')
 const [errorMessages, setErrorMessages] = useState('');
+const navigate = useNavigate()
+localStorage.setItem('usersEmail', email)
+
+
 const handleEmailChange = (event) =>{
     setEmail(event.target.value);
 }
-const navigate = useNavigate()
+
 const handleSubmit =(event)=>{
     event.preventDefault()
     axios.post('http://localhost:8002/forget-password',{email}, {withCredentials: true})
     .then(res=>{
+
         if(res.data === "Email does not exists in our database"){
             setErrorMessages('Email does not exists in our database')
         }
+
         if(res.data === "ok"){
-            navigate('/reset-password')
+            navigate('/reset-password/reset-otp')
         }
     })
 }
+
+
 return (
     <div style={{ backgroundColor: '#1D2743', padding: '270px 0px' }}>
         <div className="main-container">
@@ -42,7 +50,7 @@ return (
                 />
                 <p>{errorMessages}</p>
                 <button type="submit" className="button">
-                    <Link to={"/reset-otp"}>Submit</Link>
+                    Submit
                 </button>
             </form>
         </div>

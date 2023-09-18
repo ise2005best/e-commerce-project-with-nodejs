@@ -5,8 +5,7 @@ import './app.styles.scss'; // Import your CSS file
 import MainPage from './components/category-page/category.components';
 import NavBar from './components/navbar/navbar.component';
 import SignUpForm from './components/signup-page/signup-form/signup-fom.component';
-import SignInPage from './components/login-page/signin';
-import RedirectSignUp from './components/signup-page/thank-you-page/signup-redirect.component';
+import SignInForm from './components/login-page/login-form/signin-form.component';
 import UpdatePassword from './components/reset-password/reset-password.component';
 import ForgetPassword from './components/forget-password/forget-password';
 import OtpPage from './components/reset-password/reset-otp-page/confirm-otp';
@@ -25,17 +24,13 @@ const App = () => {
           timeout={300}
         >
           <Routes location={location}>
-            <Route index element={<MainPage />} />
+            <Route index path='/' element={<MainPage />} />
             <Route path="sign-in" element={<SignInForm />} />
-            <Route path="forget-password" element={<ForgetPassword />} />
-            <Route path="reset-password" element={<UpdatePassword />} />
-            <Route
-              path="thank-you-for-signing-up-with-us"
-              element={<RedirectSignUp />}
-            />
-            <Route path="reset-otp" element={<OtpPage/>}/>
             <Route path="sign-up" element={<SignUpForm />} />
-            <Route path="sign-in-otp" element={<OTPPage/>}/>
+            <Route path="forget-password" element={<ForgetPassword />} />
+            <Route path="reset-password/reset-otp" element={<OtpPage />} />
+            <Route path="reset-password" element={<UpdatePassword />} />
+            <Route path="verify-email" element={<OTPPage />} />
           </Routes>
         </CSSTransition>
       </TransitionGroup>

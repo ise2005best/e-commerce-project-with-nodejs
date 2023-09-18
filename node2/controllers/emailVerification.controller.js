@@ -2,10 +2,11 @@ const express = require('express');
 const db = require('../config/db.config');
 const handleEmail = require('../models/emailVerification.service');
 const otp = require('../utils/handleOtp');
+
 const router = express.Router();
 router.post('/verify-email', (req, res) => {
     const currentTimeUserInputedOtp = new Date().toISOString().slice(0, 19).replace('T', ' ');
-    const otp = req.body.otp;
+    const otp = req.body[0];
     const checkuserOtpInDB = 'SELECT * FROM usersVerification WHERE `otp` = ? AND `expired_at` >= ? '
     const values = [otp, currentTimeUserInputedOtp]
     db.query(checkuserOtpInDB, values, (err, data) => {
@@ -37,6 +38,7 @@ router.post('/verify-email', (req, res) => {
         }
     })
 })
+
 router.post('/verify-email/resend-otp', (req, res) => {
     res.header("Access-Control-Allow-Origin", "http://localhost:3000")
     const usersEmail = req.cookies.usersEmail
