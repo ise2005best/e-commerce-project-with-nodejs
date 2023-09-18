@@ -4,7 +4,7 @@ import './OtpPage.scss';
 import { Link } from 'react-router-dom';
 
 function OtpPage() {
-  const [otp, setOtp] = useState(['', '', '', '', '', '']);
+  const [otp, setOtp] = useState(["", '', '', '', '', '']);
   const [timer, setTimer] = useState(60);
   const [isResendDisabled, setIsResendDisabled] = useState(true);
 
