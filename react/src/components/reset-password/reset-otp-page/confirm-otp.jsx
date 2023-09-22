@@ -82,11 +82,16 @@ function OtpPage() {
 
   const handleVerifyClick = async() => {
     const enteredOtp = otp.join('');
-    const response = await axios.post('http://localhost:8002/password-reset/otp-confirmation', [enteredOtp], { withCredentials: true })
+    try {
+      const response = await axios.post('http://localhost:8002/password-reset/otp-confirmation', [enteredOtp], { withCredentials: true })
     if (response.data === 'Successful') {
       navigate('/reset-password')
     } else {
       setErrorMessages('Invalid otp')
+    }
+    } catch (error) {
+      console.error(error)
+      setErrorMessages('An error occurred. Please try again later.');
     }
   };
 

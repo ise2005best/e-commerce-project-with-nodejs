@@ -91,7 +91,7 @@ function OTPPage() {
   const handleVerifyClick = async(event) => {
     event.preventDefault()
      const enteredOtp = otp.join('');
-     try{
+     try {
       if(enteredOtp){
         const response = await axios.post('http://localhost:8002/verify-email', [enteredOtp], { withCredentials: true })
         console.log(response)
@@ -103,10 +103,11 @@ function OTPPage() {
         }
 
      }
-    }catch (err){
-      console.log(err)
+     } catch (error) {
+      console.error(error)
+      setErrorMessages('An error occurred. Please try again later.');
      }
-   
+     
   };
  
   return (

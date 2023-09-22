@@ -40,6 +40,7 @@ const SignUpForm = () => {
            
         } catch (error) {
             console.error(error);
+            setErrorMessages('An error occurred. Please try again later.');
         }
     }
 

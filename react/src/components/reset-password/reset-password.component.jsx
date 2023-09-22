@@ -30,7 +30,6 @@ const UpdatePassword = () => {
 
     const submitNewPassword = async (event) => {
         event.preventDefault();
-
         if (passwordValid) {
            const response = await  axios.post('http://localhost:8002/password-reset', fields, {withCredentials:true})
                 try{
@@ -43,6 +42,7 @@ const UpdatePassword = () => {
                     }
                 }catch(err){
                     console.log(err)
+                    setErrorMessages('An error occurred. Please try again later.');
                 }
         } else {
             setErrorMessages("Password does not meet the criteria.");

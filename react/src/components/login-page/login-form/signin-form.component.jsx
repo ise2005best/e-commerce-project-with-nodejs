@@ -9,32 +9,37 @@ import { useNavigate } from "react-router-dom";
 import axios from "axios";
 const SignInForm = () => {
     const navigate = useNavigate();
-    const initialFields =   {
+    const initialFields = {
         email: '',
         password: '',
     }
     const [fields, setFields] = useState(initialFields);
     const [showPassword, setShowPassword] = useState(false);
-const [errorMessages, setErrorMessages] = useState('')
+    const [errorMessages, setErrorMessages] = useState('')
     const { email, password } = fields;
     const handleChange = (event) => {
         const { name, value } = event.target;
         setFields({ ...fields, [name]: value });
     }
 
-
     const handleSubmit = async (event) => {
         event.preventDefault();
-        axios.post('http://localhost:8002/sign-in', fields)
-        .then(res=>{
-            if(res.data === "Success"){
+        try {
+            const response = await axios.post('http://localhost:8002/sign-in', fields)
+            if (response.data === "Success") {
                 navigate('/')
-            }else if (res.data === "Incorrect password") {
+            } else if (response.data === "Incorrect password") {
                 setErrorMessages('Incorrect password')
-            }else if (res.data === "User not found"){
+            } else if (response.data === "User not found") {
                 setErrorMessages('User not found')
+            } else {
+                setErrorMessages('An error occurred. Please try again later.');
             }
-        })
+        } catch (error) {
+            console.error(error)
+            setErrorMessages('An error occurred. Please try again later.');
+        }
+
     }
 
 
@@ -44,7 +49,7 @@ const [errorMessages, setErrorMessages] = useState('')
 
     return (
         <div className="sign-in">
-           
+
             <h1 className="login"> LOGIN </h1>
             <form onSubmit={handleSubmit}>
                 <LogIn type="email"
