@@ -8,6 +8,7 @@ import Footer from "../Footer-page/footer";
 import slider from '../../slider-data.json';
 import product from '../../products-data.json'
 import cart from "../../static/noun-add-to-cart-4218815.svg"
+import { Link } from "react-router-dom";
 const MainPage = () => {
   const {addItemsToCart} = useContext(CartContext)
   const cakeRef = useRef(null);
@@ -73,7 +74,7 @@ const MainPage = () => {
                 <div className="category-body-container">
                   <div>
                   <h2>{title}</h2>
-                  <p>Shop Now</p>
+                  <Link to={`/product/${id}`}>Shop Now</Link>
                   <p className="cake-prices">{price}</p>
                   <button onClick={addItemToCart} type='button' id={id} >
                     Add To Cart
