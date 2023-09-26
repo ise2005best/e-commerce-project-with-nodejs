@@ -9,7 +9,7 @@ const CartIcon =()=>{
     const toogleCart = ()=>{setIsCartOpen(!isCartOpen)}
     return(
         <div className='cart-icon-container'>
-            <CartImage className='shopping-icon' onMouseEnter={toogleCart} onMouseLeave={toogleCart} />
+            <CartImage className='shopping-icon' onClick={toogleCart}  />
             <span className='item-count'>
                 0
             </span>
