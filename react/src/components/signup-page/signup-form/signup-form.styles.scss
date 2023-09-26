@@ -1,96 +1,105 @@
-@import url('https://fonts.googleapis.com/css2?family=El+Messiri&display=swap');
-
-.signup-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: white;
-    width: 500px;
-    border-radius: 10px;
-    border: 0px ;
-    height: 700px;
-    box-shadow: 0px 10px 20px black;
-    margin: 50px auto ;
-    color: #1D2743;
-}
-.header{
-    margin-bottom: 40px;
-    font-family: 'El Messiri', sans-serif;
-}
-.text-fields{
-    margin-bottom: 50px;
+@import url("https://fonts.googleapis.com/css2?family=El+Messiri&display=swap");
+.body{
+  background-color: white;
+  position: absolute;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content:center ;
 }
 
-.sign-in-text{
-    width: 350px;
-    padding: 8px;
-    border: 0.5px solid r #1D2743;
-    outline: none;
-    border-radius: 4px;
-    box-sizing: border-box;
-    margin-top: 5px;
-    margin-bottom: 6px;
-    font-family: 'El Messiri', sans-serif;
+.signup-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  border-radius: 10px;
+  border: 0px;
+  height: 100%;
+  padding: 50px;
+  margin: 40px;
+  color: #1d2743;
+  border-radius: 40px;
+  background: #ffffff;
+  box-shadow: 41px 41px 82px #bebebe, -41px -41px 82px #f9f5f5;
+}
+.header {
+  margin-bottom: 40px;
+  font-family: "El Messiri", sans-serif;
+}
+.text-fields {
+  margin-bottom: 50px;
 }
 
-.sign-in-text:hover{
-    border: 0.5px solid #FE9000;
-}
-.password-container{
-    display: flex;
-    align-items: center;
-}
-.eye-icon{
-    margin-left: -25px;
-    padding-bottom: 2px;
-    cursor: pointer;
-}
-.eye-icon:hover{
-    color:#FE9000
-}
-.password-check-list-container{
-    margin-right: 0px;
-    font-family: 'El Messiri', sans-serif;
-}
-.password-check-list{
-    width: 100%;
-    margin-bottom: 40px !important;
-   
-}
-.kjicut{
-    margin: 10px 0 !important;
-}
-.checklist-icon{
-    margin-right: 20px !important;
-}
-.error-message{
-    text-align: left;
-    color: red ;
-    font-size: 12px;
+.sign-in-text {
+  width: 350px;
+  padding: 8px;
+  border: 0.5px solid r #1d2743;
+  outline: none;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 5px;
+  margin-bottom: 6px;
+  font-family: "El Messiri", sans-serif;
 }
 
-.submit-button{
-    font-size: 20px;
-    width: 350px;
-    border: none;
-    background-color: #1D2743;
-    color: #F5FBEF;
-    border-radius: 5px;
-    text-align: center;
-    padding: 20px;
-    font-family: 'El Messiri', sans-serif;
+.sign-in-text:hover {
+  border: 0.5px solid #fe9000;
+}
+.password-container {
+  display: flex;
+  align-items: center;
+}
+.eye-icon {
+  margin-left: -25px;
+  padding-bottom: 2px;
+  cursor: pointer;
+}
+.eye-icon:hover {
+  color: #fe9000;
+}
+.password-check-list-container {
+  margin-right: 0px;
+  font-family: "El Messiri", sans-serif;
+}
+.password-check-list {
+  width: 100%;
+  margin-bottom: 40px !important;
+}
+.kjicut {
+  margin: 10px 0 !important;
+}
+.checklist-icon {
+  margin-right: 20px !important;
+}
+.error-message {
+  text-align: left;
+  color: red;
+  font-size: 12px;
 }
 
-.submit-button:hover{
-    color: #1D2743;
-    background-color: #FE9000;
-    border: rgb(42, 93, 195);
-    font-size: 24px;
-    transition: ease-in-out 0.3s;
+.submit-button {
+  font-size: 20px;
+  width: 350px;
+  border: none;
+  background-color: #1d2743;
+  color: #f5fbef;
+  border-radius: 5px;
+  text-align: center;
+  padding: 20px;
+  font-family: "El Messiri", sans-serif;
 }
 
-.link{
-    color: #F5FBEF;
-    text-decoration: none;
+.submit-button:hover {
+  color: #1d2743;
+  background-color: #fe9000;
+  border: rgb(42, 93, 195);
+  font-size: 24px;
+  transition: ease-in-out 0.3s;
+}
+
+.link {
+  color: #f5fbef;
+  text-decoration: none;
 }

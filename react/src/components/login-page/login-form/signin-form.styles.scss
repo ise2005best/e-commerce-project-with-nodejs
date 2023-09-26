@@ -1,35 +1,37 @@
-@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=El+Messiri&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Anton&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=El+Messiri&display=swap");
 
-.sign-in{
-    margin: auto;
-    background-color: rgb(255, 255, 255);
-    padding: 40px;
-    box-shadow: 0px 4px 10px grey;
-    border-radius: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: fit-content;
-    width: 600px;
-    
-    
-.login{
+.sign-in {
+  margin: auto;
+  background-color: rgb(255, 255, 255);
+  padding: 40px;
+  border-radius: 40px;
+  box-shadow: 41px 41px 82px #bebebe, -41px -41px 82px #f9f5f5;
+  flex-direction: column;
+  height: fit-content;
+  width: 600px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+
+  .login {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     padding-bottom: 50px;
     color: #172447;
-    font-family: 'El Messiri', sans-serif;
-}
-.password-container{
+    font-family: "El Messiri", sans-serif;
+  }
+
+  .password-container {
     display: flex;
     align-items: center;
-    
-}
-.sign-in-text{
+  }
+
+  .sign-in-text {
     width: 55vh;
     padding: 8px;
     outline: none;
@@ -38,55 +40,60 @@
     margin-top: 5px;
     margin-bottom: 6px;
     border: 0.5px solid r#1D2743;
-}
-.sign-in-text:hover{
-    border: 0.5px solid  #FE9000 ;
-}
-.eye-icon{
+  }
+
+  .sign-in-text:hover {
+    border: 0.5px solid #fe9000;
+  }
+
+  .eye-icon {
     cursor: pointer;
     margin-left: -25px;
-}
-.forget-password-button{
+  }
+
+  .forget-password-button {
     border: none;
     outline: none;
-    color: #1D2743;
+    color: #1d2743;
     text-decoration: none;
     float: right;
-    font-family: 'El Messiri', sans-serif;
-}
-.button-container{
+    font-family: "El Messiri", sans-serif;
+  }
+
+  .button-container {
     text-align: center;
     margin: 15px;
-    
-}
-.login-button{
+  }
+
+  .login-button {
     padding: 10px;
     font-size: 20px;
     width: 350px;
     border: none;
-    background-color: #1D2743;
-    color: #F5FBEF;
+    background-color: #1d2743;
+    color: #f5fbef;
     border-radius: 5px;
-   text-align: center;
-   font-family: 'El Messiri', sans-serif;
-}
-.login-button:hover{
-    color: #1D2743;
-    background-color: #FE9000;
+    text-align: center;
+    font-family: "El Messiri", sans-serif;
+  }
+
+  .login-button:hover {
+    color: #1d2743;
+    background-color: #fe9000;
     transition: ease-in-out 0.3s;
-}
-.error-messages{
+  }
+
+  .error-messages {
     text-align: left;
     color: red;
     font-size: 12px;
-}
-.sign-up-link{
+  }
+
+  .sign-up-link {
     text-decoration: none;
     float: right;
     font-size: 14px;
     font-weight: 500px;
-    font-family: 'El Messiri', sans-serif;
-    
+    font-family: "El Messiri", sans-serif;
+  }
 }
-}
-

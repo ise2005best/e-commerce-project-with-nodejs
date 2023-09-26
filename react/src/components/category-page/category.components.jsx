@@ -7,14 +7,15 @@ import { CartContext } from "../../context/cart.context";
 import Footer from "../Footer-page/footer";
 import slider from '../../slider-data.json';
 import product from '../../products-data.json'
+import cart from "../../static/noun-add-to-cart-4218815.svg"
 const MainPage = () => {
   const {addItemsToCart} = useContext(CartContext)
   const cakeRef = useRef(null);
 
-  const [visibleCategories, setVisibleCategories] = useState(6);
+  const [visibleCategories, setVisibleCategories] = useState(8);
 
   const handleShowMore = () => {
-    setVisibleCategories((prevVisible) => prevVisible + 3);
+    setVisibleCategories((prevVisible) => prevVisible + 4);
   };
 
 
@@ -70,6 +71,7 @@ const MainPage = () => {
                   }}
                 />
                 <div className="category-body-container">
+                  <div>
                   <h2>{title}</h2>
                   <p>Shop Now</p>
                   <p className="cake-prices">{price}</p>
@@ -77,6 +79,9 @@ const MainPage = () => {
                     Add To Cart
                   </button>
                 </div>
+                <img className="cart" src={cart} alt="add to cart"/> 
+                </div>
+             
               </div>
             ))}
         </div>

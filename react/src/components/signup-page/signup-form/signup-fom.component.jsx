@@ -49,12 +49,12 @@ const SignUpForm = () => {
     }
    
     return (
-        <div style={{backgroundColor:"#1D2743", padding:"100px"}}>
+        <div className="body">
             <div className="signup-container">
             <h2 className="header">SIGN UP NOW!</h2>
             <form onSubmit={handleSubmit}>
                 <div className="text-fields">
-                    <LogIn type="text"
+                    <LogIn type=""
                         required
                         placeholder="Name"
                         className="sign-in-text"
