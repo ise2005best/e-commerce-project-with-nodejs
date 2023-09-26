@@ -35,12 +35,12 @@ const handleSubmit = async (event)=>{
 
 
 return (
-    <div style={{ backgroundColor: '#1D2743', padding: '270px 0px' }}>
-        <div className="main-container">
+   <div className="main">
+        <div className="container">
             <h2 className="title">
                 Forget Password
             </h2>
-            <span className="body">
+            <span>
                 Please input your email to reset your password
             </span>
             <form onSubmit={handleSubmit}>
@@ -53,13 +53,14 @@ return (
                     required
                     onChange={handleEmailChange}
                 />
+
                 <p>{errorMessages}</p>
                 <button type="submit" className="button">
                     Submit
                 </button>
             </form>
         </div>
-    </div>
+        </div>
 )
 }
 export default ForgetPassword;
