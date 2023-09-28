@@ -23,13 +23,13 @@ const MainPage = () => {
   const addItemToCart = (event) => {
     const buttonId = event.target.id;
     const productId = buttonId;
-    if (productId === buttonId) {
-      const products = [];
-      products.id = product[productId - 1].id;
-      products.title = product[productId - 1].title;
-      products.imageUrl = product[productId - 1].imageUrl;
-      products.price = product[productId - 1].price;
-      addItemsToCart(products);
+    if(productId == buttonId){
+      const products = []
+      products.id = product[productId - 1].id
+      products.title = product[productId - 1].title
+      products.imageUrl = product[productId - 1].imageUrl
+      products.price = product[productId -1].price
+      addItemsToCart(products)
     }
   };
 
