@@ -25,10 +25,10 @@ const MainPage = () => {
     const productId = buttonId;
     if(productId == buttonId){
       const products = []
-      products.id = product[productId].id
-      products.title = product[productId].title
-      products.imageUrl = product[productId].imageUrl
-      products.price = product[productId].price
+      products.id = product[productId - 1].id
+      products.title = product[productId - 1].title
+      products.imageUrl = product[productId - 1].imageUrl
+      products.price = product[productId -1].price
       addItemsToCart(products)
     }
   }
