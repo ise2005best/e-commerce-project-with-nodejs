@@ -35,7 +35,7 @@ const handleSubmit = async (event)=>{
 
 
 return (
-   <div className="main">
+   <div className="color">
         <div className="container">
             <h2 className="title">
                 Forget Password
