@@ -10,7 +10,7 @@ import product from '../../products-data.json';
 import cart from "../../static/noun-add-to-cart-4218815.svg";
 import { useNavigate } from 'react-router-dom';
 const MainPage = () => {
-  const { addItemsToCart } = useContext(CartContext);
+  const { addItemsToCart} = useContext(CartContext);
   const cakeRef = useRef(null);
   const navigate = useNavigate();
 
@@ -82,7 +82,7 @@ const MainPage = () => {
                 />
                 <div className="category-body-container">
                   <div>
-                    <div onClick={() => navigateToProductPage(id)}>
+                    <div onClick={() => navigateToProductPage(id)} className="products-container">
                     <h2>{title}</h2>
                     <p className="cake-prices">{price}</p>
                     </div>
