@@ -29,17 +29,17 @@ const Footer = () => {
         <div className="footer-content">
           <div className="Logo">
            
-            <Link className="logo-link" to={"/"}>
+            <Link className="Logo-link" to={"/"}>
               ISESEN
             </Link>
           </div>
           <div className="address">
-            <h3 style={{ fontSize: "26px"}}>Our Address</h3>
+            <h3 >Our Address</h3>
             <p>1234 Example Street</p>
             <p>City, State ZIP</p>
           </div>
           <div className="legal-links">
-            <h3 style={{ paddingLeft: "45px" ,  fontSize: "26px" }}>Legal</h3>
+            <h3>Legal</h3>
             <ul>
               <li>
                 <a href="/terms">Terms and Conditions</a>
@@ -50,7 +50,7 @@ const Footer = () => {
             </ul>
           </div>
           <div className="services">
-            <h3 style={{ paddingLeft: "30px" ,  fontSize: "26px" }}>Services</h3>
+            <h3 >Services</h3>
             <ul>
               <li>
                 <a href="/deliveries">Delivery Information</a>

@@ -7,7 +7,6 @@ import { CartContext } from "../../context/cart.context";
 import Footer from "../Footer-page/footer";
 import slider from '../../slider-data.json';
 import product from '../../products-data.json';
-import cart from "../../static/noun-add-to-cart-4218815.svg";
 import { useNavigate } from 'react-router-dom';
 const MainPage = () => {
   const { addItemsToCart } = useContext(CartContext);
@@ -90,7 +89,6 @@ const MainPage = () => {
                       Add To Cart
                     </button>
                   </div>
-                  <img className="cart" src={cart} alt="add to cart"/> 
                 </div>
               </div>
             ))}

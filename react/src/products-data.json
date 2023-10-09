@@ -7,7 +7,9 @@
       "price": "N400",
       "description1":"Embark on a delightful journey with Mystery Slices, where each bite is an adventure into the unknown.",
       "description2":"These enigmatic slices offer a medley of surprising flavors, keeping your taste buds guessing.",
-      "description3":"Whether it's a hidden fruit filling or a secret blend of spices, Mystery Slices are an intriguing dessert experience."
+      "description3":"Whether it's a hidden fruit filling or a secret blend of spices, Mystery Slices are an intriguing dessert experience.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 2,
@@ -17,7 +19,9 @@
       "price":  "N500",
       "description1":"The Bundt Cake is a true classic, boasting a moist and tender crumb with a buttery, vanilla-infused aroma.",
       "description2":"Its distinctive ring shape ensures that each slice is a work of art, perfect for any occasion.",
-      "description3":"A drizzle of sweet glaze or a dusting of powdered sugar completes this timeless treat."
+      "description3":"A drizzle of sweet glaze or a dusting of powdered sugar completes this timeless treat.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 3,
@@ -27,7 +31,9 @@
       "price": "N700",
       "description1":"Dive into the rich, seductive world of Black Forest Cake, where layers of chocolate cake are caressed by a hint of cherry liqueur.",
       "description2":"Whipped cream and dark cherries nestle between the layers, creating a tantalizing dance of flavors and textures.",
-      "description3":"Adorned with chocolate shavings, it's a dessert masterpiece that satisfies both your sweet tooth and your soul."
+      "description3":"Adorned with chocolate shavings, it's a dessert masterpiece that satisfies both your sweet tooth and your soul.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 4,
@@ -37,7 +43,9 @@
       "price" : "N800",
       "description1":"Carrot Cake is a harmonious blend of moist, spice-infused cake and the natural sweetness of grated carrots.",
       "description2":"Pecans or walnuts add a delightful crunch while cream cheese frosting drapes the cake in a creamy, tangy embrace.",
-      "description3":"A slice of Carrot Cake is like a warm hug on a chilly day, full of comforting flavors."
+      "description3":"A slice of Carrot Cake is like a warm hug on a chilly day, full of comforting flavors.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 5,
@@ -47,7 +55,9 @@
       "price" : "N600",
       "description1":"Charlotte Cake is an elegant dessert that marries ladyfingers with a velvety mousse or custard.",
       "description2":"Layers of delicate sponge cakes are surrounded by a vibrant fruit or berry filling, creating a symphony of flavors and colors.",
-      "description3":"It's a dessert that embodies sophistication and indulgence."
+      "description3":"It's a dessert that embodies sophistication and indulgence.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 6,
@@ -57,7 +67,9 @@
       "price" : "N800",
       "description1":"Creamy and velvety, Cheesecake is a dessert that teases your taste buds with its luxurious texture and sweet, cheesy filling.",
       "description2":"rom classic New York-style to exotic flavors like mango or raspberry swirl, there's a Cheesecake for every palate.",
-      "description3":"Topped with fruit compote or chocolate ganache, it's a dessert that spells decadence."
+      "description3":"Topped with fruit compote or chocolate ganache, it's a dessert that spells decadence.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 7,
@@ -67,7 +79,9 @@
       "price" : "N1200",
       "description1":"Chocolate Cake is a heavenly creation for chocolate enthusiasts, featuring layers of moist chocolate sponge.",
       "description2":"Each bite is a blissful experience of pure cocoa goodness, enhanced by chocolate ganache or frosting.",
-      "description3":"It's a chocolate lover's dream come true, providing comfort and joy in every slice." 
+      "description3":"It's a chocolate lover's dream come true, providing comfort and joy in every slice." ,
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 8,
@@ -77,7 +91,9 @@
       "price": "N1500",
       "description1":"Chocolava Cake is a magical dessert with a molten chocolate center that oozes out like liquid gold when you take a bite.",
       "description2":"The contrast between the warm, gooey interior and the soft chocolate cake exterior is a sensory delight.",
-      "description3":"A scoop of vanilla ice cream is the perfect companion to this delectable treat."
+      "description3":"A scoop of vanilla ice cream is the perfect companion to this delectable treat.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 9,
@@ -87,7 +103,9 @@
       "price": "N800",
       "description1":"Coconut Cake is a tropical escape in dessert form, with layers of fluffy coconut-flavored cake and creamy coconut frosting.",
       "description2":"Toasted coconut shavings on top add a delightful crunch and enhance the coconut aroma.",
-      "description3":"It's like a beach vacation for your taste buds."
+      "description3":"It's like a beach vacation for your taste buds.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 10,
@@ -97,7 +115,9 @@
       "price": "N500",
       "description1":"Fruit Cake is a holiday classic brimming with candied fruits, nuts, and warm spices.",
       "description2":"Each slice is a festive celebration of flavors, with the sweetness of dried fruits complemented by a hint of brandy or rum.",
-      "description3":"It's a slice of nostalgia that brings warmth to the heart."
+      "description3":"It's a slice of nostalgia that brings warmth to the heart.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 11,
@@ -107,7 +127,9 @@
       "price": "N1500",
       "description1":"Genoa Cake is a traditional British delight, featuring a rich, fruit-laden cake with a hint of spice.",
       "description2":"Dried currants, sultanas, and candied peel are lovingly mixed into the batter, creating a symphony of textures.",
-      "description3":"A slice of Genoa Cake is like a taste of history and tradition."
+      "description3":"A slice of Genoa Cake is like a taste of history and tradition.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 12,
@@ -117,7 +139,9 @@
       "price": "N1000",
      "description1":"Geode Cake is a work of edible art, featuring stunning, jewel-like crystal formations made of sugar.",
       "description2":"Beneath the edible geode lies a decadent cake with layers of flavor, creating a mesmerizing dessert experience.",
-      "description3":"It's a cake that captures the beauty of nature and the sweetness of indulgence."
+      "description3":"It's a cake that captures the beauty of nature and the sweetness of indulgence.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 13,
@@ -127,7 +151,9 @@
       "price": "N2000",
       "description1":"Ice Cream Cake is a dreamy dessert that combines the best of both worlds—cake and ice cream.",
       "description2":"Layers of cake alternate with creamy ice cream, offering a delightful contrast in temperatures and textures.",
-      "description3":"Topped with fudge sauce or crushed cookies, it's a cool, refreshing treat."
+      "description3":"Topped with fudge sauce or crushed cookies, it's a cool, refreshing treat.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 14,
@@ -137,7 +163,9 @@
       "price": "N1200",
      "description1":"Lemon Cake is a burst of sunshine on a plate, featuring zesty lemon-infused cake layers.",
       "description2":"The tangy lemon curd or frosting adds a refreshing twist, balancing the sweetness with citrusy brightness.",
-      "description3":"It's a dessert that wakes up your taste buds with a burst of citrus delight."
+      "description3":"It's a dessert that wakes up your taste buds with a burst of citrus delight.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 15,
@@ -147,7 +175,9 @@
       "price": "N1700",
      "description1":"Moose Cake is a wilderness adventure on a plate, with a harmonious blend of moist chocolate and nutty flavors.",
       "description2":"Crunchy bits of toasted nuts are sprinkled throughout, providing a delightful surprise in every slice.",
-      "description3":"It's a cake that captures the essence of the great outdoors."
+      "description3":"It's a cake that captures the essence of the great outdoors.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 16,
@@ -157,7 +187,9 @@
       "price": "N1900",
      "description1":"Pound Cake is a timeless classic, known for its dense, buttery texture and golden crust.",
       "description2":"Whether enjoyed plain or with a dollop of whipped cream and fresh berries, it's a simple pleasure that never goes out of style.",
-      "description3":"It's a cake that celebrates the beauty of simplicity."
+      "description3":"It's a cake that celebrates the beauty of simplicity.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 17,
@@ -167,7 +199,9 @@
       "price": "N800",
       "description1":"Red Velvet Cake is the epitome of elegance, with its striking crimson hue and delicate cocoa flavor.",
       "description2":"Cream cheese frosting complements the cake's subtle sweetness, creating a perfect balance of flavors.",
-      "description3":"It's a cake that adds a touch of sophistication to any occasion."
+      "description3":"It's a cake that adds a touch of sophistication to any occasion.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 18,
@@ -177,7 +211,9 @@
       "price": "N700",
      "description1":"Swiss Roll Cake is a whimsical delight, featuring a light and airy sponge cake rolled around a luscious filling.",
       "description2":"Whether filled with jam, cream, or chocolate, each bite is a delightful swirl of flavors and textures.",
-      "description3":"It's a cake that embodies playfulness and charm."
+      "description3":"It's a cake that embodies playfulness and charm.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 19,
@@ -187,7 +223,9 @@
       "price": "N1200",
       "description1":"Shortcake is a summer sensation, with layers of tender, crumbly biscuits enveloping ripe, juicy berries.",
       "description2":"A dollop of whipped cream crowns this fruity masterpiece, creating a perfect harmony of sweet and tangy.",
-      "description3":"It's a dessert that captures the essence of summertime."
+      "description3":"It's a dessert that captures the essence of summertime.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 20,
@@ -197,7 +235,9 @@
       "price": "2200",
      "description1":"Chocolate Soufflé is a masterpiece of French cuisine, featuring a light, airy interior and a rich, velvety chocolate flavor.",
       "description2":"Each spoonful is a decadent experience, as the soufflé melts in your mouth.",
-      "description3":"It's a dessert that exudes sophistication and culinary artistry."
+      "description3":"It's a dessert that exudes sophistication and culinary artistry.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 21,
@@ -207,7 +247,9 @@
       "price": "N2500",
      "description1":"Spice Cake is a warm and comforting dessert, infused with aromatic spices like cinnamon, nutmeg, and cloves.",
       "description2":"Its cozy flavors evoke memories of autumn and holiday gatherings, making it a perfect seasonal treat.",
-      "description3":"It's a cake that wraps you in a cozy culinary hug."
+      "description3":"It's a cake that wraps you in a cozy culinary hug.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 22,
@@ -217,7 +259,9 @@
       "price": "N800",
      "description1":"Sponge Cake is a light and airy delight, with a delicate crumb that practically melts on your tongue.",
       "description2":"Whether enjoyed with fresh fruit and cream or as a base for elaborate desserts, its versatility is its hallmark.",
-      "description3":"It's a cake that showcases simplicity at its finest."
+      "description3":"It's a cake that showcases simplicity at its finest.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 23,
@@ -227,7 +271,9 @@
       "price": "N600",
      "description1":"Tea Cake is a charming companion to your afternoon tea, with a buttery, crumbly texture and a hint of sweetness.",
       "description2":"Its simplicity allows it to pair perfectly with a cup of your favorite tea, enhancing your tea time experience.",
-      "description3":"It's a cake that whispers of elegance and tradition."
+      "description3":"It's a cake that whispers of elegance and tradition.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 24,
@@ -237,7 +283,9 @@
       "price": "N1500",
      "description1":"Tiramisu is an Italian masterpiece, featuring layers of coffee-soaked ladyfingers and a velvety mascarpone filling.",
       "description2":"Each bite is a symphony of flavors, as the coffee, cocoa, and creamy mascarpone dance on your taste buds.",
-      "description3":"It's a dessert that transports you to the streets of Italy with every bite."
+      "description3":"It's a dessert that transports you to the streets of Italy with every bite.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 25,
@@ -247,7 +295,9 @@
       "price": "N1400",
      "description1":"Tres Leches Cake is a Latin American treasure, with a sponge cake that soaks up three milks—sweetened condensed milk, evaporated milk, and heavy cream.",
       "description2":"It's a creamy, dreamy dessert that's both indulgent and refreshing, often adorned with a crown of whipped cream.",
-      "description3":"It's a cake that celebrates the art of soaking in flavor."
+      "description3":"It's a cake that celebrates the art of soaking in flavor.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 26,
@@ -257,7 +307,9 @@
       "price": "N1800",
      "description1":"Upside Down Cake is a playful twist on traditional cake, with fruit slices caramelized on the bottom before baking.",
       "description2":"When flipped, the cake reveals a beautiful mosaic of fruit and a sticky, sweet topping.",
-      "description3":"It's a cake that adds a touch of whimsy to dessert time."
+      "description3":"It's a cake that adds a touch of whimsy to dessert time.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     },
     {
       "id": 27,
@@ -267,6 +319,8 @@
       "price": "N1500",
      "description1":"Vanilla Cake is a timeless classic, celebrated for its simple yet exquisite flavor.",
       "description2":"Whether enjoyed on its own or as a canvas for creative toppings and frostings, it's a cake that never goes out of style.",
-      "description3":"Each slice offers a pure, comforting vanilla aroma and a tender crumb."
+      "description3":"Each slice offers a pure, comforting vanilla aroma and a tender crumb.",
+      "tiny-images":["https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg","https://static.vecteezy.com/system/resources/previews/014/989/719/original/question-mark-hand-drawn-doodle-faq-symbol-free-vector.jpg"]
+
     }
   ]
