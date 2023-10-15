@@ -11,6 +11,7 @@ import ForgetPassword from './components/forget-password/forget-password';
 import OtpPage from './components/reset-password/reset-otp-page/confirm-otp';
 import OTPPage from './components/signup-page/sign-up-otp-page/confirm-otp';
 import ProductDetail from './products/product-detail.component';
+import CheckOutComponent from './components/checkout/checkout.component';
 
 const App = () => {
   const location = useLocation();
@@ -33,6 +34,7 @@ const App = () => {
             <Route path="reset-password" element={<UpdatePassword />} />
             <Route path="verify-email" element={<OTPPage />} />
             <Route path="product/:id" element={<ProductDetail/>} />
+            <Route path="product/checkout" element={<CheckOutComponent/>} />
           </Routes>
         </CSSTransition>
       </TransitionGroup>
