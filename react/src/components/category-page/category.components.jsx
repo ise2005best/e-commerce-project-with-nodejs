@@ -84,7 +84,7 @@ const MainPage = () => {
                   <div>
                     <div onClick={() => navigateToProductPage(id)} className="products-container">
                     <h2>{title}</h2>
-                    <p className="cake-prices">{price}</p>
+                    <p className="cake-prices">₦{price}</p>
                     </div>
                     <button onClick={addItemToCart} type='button' id={id} >
                       Add To Cart
