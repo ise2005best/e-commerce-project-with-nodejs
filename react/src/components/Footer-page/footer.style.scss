@@ -68,11 +68,10 @@ body {
 /* Responsive layout for screens at 870px and below */
 @media (max-width: 960px) {
     .footer-content {
-      display: grid;
-      grid-template-columns: 1fr; /* Single column layout */
-      grid-template-rows: auto auto; /* Two rows */
-      grid-gap: 20px; /* Spacing between grid items */
-      align-items: start;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
     }
   
     .Logo {
@@ -99,6 +98,10 @@ body {
       margin-left: 0;
       list-style-type: none;
     }
+    .footer{
+      background: linear-gradient(to bottom, #1D2743 86%, #F5FBEF 10%);
+
+    }
   }
   
 
@@ -108,13 +111,12 @@ ul {
   padding: 0;
 }
 
-.logo-link {
+.Logo-link {
   height: 100%;
-  width: 70px;
-  padding: 25px;
   font-family: "Tilt Prism", sans-serif;
   text-decoration: none;
   font-size: 100%;
   font-weight: bolder;
   color: #FE9000;
+  margin-left: 50px;
 }
