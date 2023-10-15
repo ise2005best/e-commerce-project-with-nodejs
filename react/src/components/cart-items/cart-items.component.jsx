@@ -27,7 +27,9 @@ const CartItem = ({CartItem}) =>{
                 {title}
             </span>
             <p>
-                {quantity} x {price}
+                <PLUSICON className="plus-icon" onClick={handleAddToCart}/>
+                {quantity} 
+                <MINUSICON className="minus-icon"  onClick={handleRemoveItemFromCart}/> x {price}
             </p>
             <PLUSICON  style={{height: 40, width: 30}} onClick={handleAddToCart}/>
             <MINUSICON style={{height: 40, width: 30}} onClick={handleRemoveItemFromCart}/>

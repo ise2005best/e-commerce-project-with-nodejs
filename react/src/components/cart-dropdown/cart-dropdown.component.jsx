@@ -12,7 +12,7 @@ const CartDropdown = () => {
     }
     const { cartItems } = useContext(CartContext);
 
-    return (
+    return ( 
         <div className='cart-dropdown-container'>
             <div className='cart-items'>
                 {
