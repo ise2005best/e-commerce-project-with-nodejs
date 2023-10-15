@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/img-redundant-alt */
 import React, { useState } from "react";
 import Slider from "react-slick"; // Import the Slider component
 import "slick-carousel/slick/slick.css"; // Import slick-carousel CSS
@@ -63,7 +62,7 @@ const ProductDetail = ({ addItemsToCart }) => {
                 <p className="description">{PRODUCTS[productId].description3}</p>
             </div>
         </div>
-    )
-}
+  );
+};
 
 export default ProductDetail;
