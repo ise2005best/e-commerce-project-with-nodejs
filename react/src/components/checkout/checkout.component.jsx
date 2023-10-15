@@ -1,5 +1,6 @@
 import React, {useContext} from "react";
 import { CartContext } from "../../context/cart.context";
+import {ReactComponent as NextArrow } from '../../static/noun-next-arrow-3565425.svg'
 import './checkout.styles.scss';
 const CheckOutComponent = () =>{
     const {cartItems} = useContext(CartContext)
