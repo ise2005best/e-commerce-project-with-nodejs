@@ -1,17 +1,22 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import {ReactComponent as PLUSICON} from '../../static/noun-plus-3796374.svg'
+import {ReactComponent as MINUSICON} from '../../static/noun-minus-338134.svg'
 import {CartContext} from '../../context/cart.context'
 const CartItem = ({CartItem}) =>{
     const {title, quantity, price, imageUrl, id} = CartItem;
-    const { removeItemFromCart} = useContext(CartContext)
+    const { removeItemFromCart, addItemsToCart} = useContext(CartContext)
 
+    const productToRemove = {}
+    productToRemove.id = id
+    productToRemove.title = title
+    productToRemove.quantity = quantity
+    productToRemove.price = price
+    productToRemove.imageUrl = imageUrl
+
+    const handleAddToCart = () =>{
+        addItemsToCart(productToRemove)
+    }
     const handleRemoveItemFromCart =() =>{
-        const productToRemove = {}
-        productToRemove.id = id
-        productToRemove.title = title
-        productToRemove.quantity = quantity
-        productToRemove.price = price
-        productToRemove.imageUrl = imageUrl
         removeItemFromCart(productToRemove)
     }
     return(
@@ -24,9 +29,8 @@ const CartItem = ({CartItem}) =>{
             <p>
                 {quantity} x {price}
             </p>
-            <button onClick={handleRemoveItemFromCart} type='button'>
-                remove
-            </button>
+            <PLUSICON  style={{height: 40, width: 30}} onClick={handleAddToCart}/>
+            <MINUSICON style={{height: 40, width: 30}} onClick={handleRemoveItemFromCart}/>
         </div>
     )
 }
