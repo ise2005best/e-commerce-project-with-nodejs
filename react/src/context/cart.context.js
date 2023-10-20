@@ -23,12 +23,10 @@ const removeCartItem = (cartItems, cartItemToRemove) => {
     const existingCartItem = cartItems.find(
       (item) => item.id === cartItemToRemove.id
     );
-    console.log(cartItems, cartItemToRemove)
     // remove from cart item when quantity is null
     if (existingCartItem.quantity === 1) {
       return cartItems.filter((item) => item.id !== cartItemToRemove.id);
     }
-    console.log(existingCartItem)
     // map over new cartItems
     return cartItems.map((item) =>
       item.id === cartItemToRemove.id

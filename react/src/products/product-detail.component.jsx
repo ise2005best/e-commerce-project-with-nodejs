@@ -1,8 +1,11 @@
-import React, { useState ,useEffect} from "react";
+import React, { useState , useContext} from "react";
+import { useParams } from "react-router-dom";
+import { CartContext } from "../context/cart.context";
 import PRODUCTS from "../products-data.json";
 import "./product-detail.styles.scss";
 
 const ProductDetail = () => {
+    const {addItemWithQuantityToCart} = useContext(CartContext)
     const {id} = useParams();
     const productId = PRODUCTS[id]?.id - 2;
 

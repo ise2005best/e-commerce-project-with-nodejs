@@ -9,7 +9,9 @@ const ProductSection = () => {
     const { cartItems, removeEntireItemFromCart, removeItemFromCart } = useContext(CartContext);
 
     const calculateTotal = (item) => {
-        return item.price * item.quantity;
+        // remove the N from the price
+        const itemsPrice = item.price.slice(1);
+        return itemsPrice * item.quantity;
     };
     const handleRemoveItem = (cartItem) =>{
         removeEntireItemFromCart(cartItem)
@@ -24,7 +26,7 @@ const ProductSection = () => {
                         <img src={cartItem.imageUrl} alt={cartItem.title} />
                         <div>
                             <h3>{cartItem.title}</h3>
-                            <p>Price: ₦{cartItem.price}</p>
+                            <p>Price: {cartItem.price}</p>
                             <p>
                                 
 
@@ -89,7 +91,9 @@ const CheckOutComponent = () => {
     const { cartItems } = useContext(CartContext);
 
     const calculateTotal = (item) => {
-        return item.price * item.quantity;
+        // remove the N from the price
+        const itemsPrice = item.price.slice(1);
+        return itemsPrice * item.quantity;
     };
 
     const cartTotal = cartItems.reduce((acc, item) => acc + calculateTotal(item), 0);
