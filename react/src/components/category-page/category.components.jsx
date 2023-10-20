@@ -82,14 +82,16 @@ const MainPage = () => {
                 />
                 <div className="category-body-container">
                   <div>
-                    <div onClick={() => navigateToProductPage(id)} className="products-container">
+                    <div onClick={() => navigateToProductPage(id)}>
                     <h2>{title}</h2>
-                    <p className="cake-prices">₦{price}</p>
+                    <p className="cake-prices">{price}</p>
                     </div>
                     <button onClick={addItemToCart} type='button' id={id} >
                       Add To Cart
                     </button>
                   </div>
+
+                  <img className="cart" src={cart} alt="add to cart"/> 
                 </div>
               </div>
             ))}
