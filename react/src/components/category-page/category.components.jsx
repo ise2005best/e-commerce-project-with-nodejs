@@ -7,9 +7,16 @@ import { CartContext } from "../../context/cart.context";
 import Footer from "../Footer-page/footer";
 import slider from '../../slider-data.json';
 import product from '../../products-data.json';
+<<<<<<< HEAD
 import { useNavigate } from 'react-router-dom';
 const MainPage = () => {
   const { addItemsToCart } = useContext(CartContext);
+=======
+import cart from "../../static/noun-add-to-cart-4218815.svg";
+import { useNavigate } from 'react-router-dom';
+const MainPage = () => {
+  const { addItemsToCart} = useContext(CartContext);
+>>>>>>> e33adbb51874ace379c2439dbd5bb239c8d69d1b
   const cakeRef = useRef(null);
   const navigate = useNavigate();
 
@@ -22,13 +29,13 @@ const MainPage = () => {
   const addItemToCart = (event) => {
     const buttonId = event.target.id;
     const productId = buttonId;
-    if (productId === buttonId) {
-      const products = [];
-      products.id = product[productId - 1].id;
-      products.title = product[productId - 1].title;
-      products.imageUrl = product[productId - 1].imageUrl;
-      products.price = product[productId - 1].price;
-      addItemsToCart(products);
+    if(productId == buttonId){
+      const products = []
+      products.id = product[productId - 1].id
+      products.title = product[productId - 1].title
+      products.imageUrl = product[productId - 1].imageUrl
+      products.price = product[productId -1].price
+      addItemsToCart(products)
     }
   };
 
@@ -81,14 +88,24 @@ const MainPage = () => {
                 />
                 <div className="category-body-container">
                   <div>
+<<<<<<< HEAD
                     <div onClick={() => navigateToProductPage(id)}>
                     <h2>{title}</h2>
                     <p className="cake-prices">{price}</p>
+=======
+                    <div onClick={() => navigateToProductPage(id)} className="products-container">
+                    <h2>{title}</h2>
+                    <p className="cake-prices">₦{price}</p>
+>>>>>>> e33adbb51874ace379c2439dbd5bb239c8d69d1b
                     </div>
                     <button onClick={addItemToCart} type='button' id={id} >
                       Add To Cart
                     </button>
                   </div>
+<<<<<<< HEAD
+=======
+                  <img className="cart" src={cart} alt="add to cart"/> 
+>>>>>>> e33adbb51874ace379c2439dbd5bb239c8d69d1b
                 </div>
               </div>
             ))}

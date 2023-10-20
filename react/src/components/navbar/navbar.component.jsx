@@ -47,6 +47,7 @@ const NavBar = () => {
         <div className="nav-bar-container"> 
         <div className="nav-links" style={navlinks}>
           <div className={`search-container ${isFocused ? "focused" : ""}`}>
+            <div className="search-icon" onClick={handleSearchClick}></div>
             <input
               type="text"
               placeholder="search ... "
