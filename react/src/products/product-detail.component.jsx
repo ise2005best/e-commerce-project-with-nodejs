@@ -1,4 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext} from "react";
+import { useParams } from "react-router-dom";
+import { CartContext } from "../context/cart.context";
 import Slider from "react-slick"; // Import the Slider component
 import "slick-carousel/slick/slick.css"; // Import slick-carousel CSS
 import "slick-carousel/slick/slick-theme.css"; // Import slick-carousel theme CSS
@@ -6,10 +8,17 @@ import PRODUCTS from '../products-data.json';
 import './product-detail.styles.scss';
 
 
-const ProductDetail = ({ addItemsToCart }) => {
-    const url = window.location.href.split('/');
-    const urlID = url[4];
-    const productId = PRODUCTS[urlID].id - 2;
+const ProductDetail = () => {
+     const {addItemWithQuantityToCart} = useContext(CartContext)
+     const [quantity, setQuantity] = useState(1);
+     const {id} = useParams();
+    // const url = window.location.href.split('/');
+    // const urlID = url[4];
+    // // console.log(url, urlID);
+    // if(!urlID){
+    //     return null;
+    // }
+    const productId = PRODUCTS[id]?.id - 2;
 
     const sliderSettings = {
         dots: true,
@@ -19,16 +28,14 @@ const ProductDetail = ({ addItemsToCart }) => {
         slidesToScroll: 1,
     };
 
-    const [quantity, setQuantity] = useState(1);
-
     const handleQuantityChange = (event) => {
         setQuantity(parseInt(event.target.value));
     };
 
     const handleAddToCart = () => {
+        addItemWithQuantityToCart(PRODUCTS[id - 1], quantity)
         //add logic to ad to cart
     };
-
     return (
         <div className="product-detail-container">
             <div className="product-main">

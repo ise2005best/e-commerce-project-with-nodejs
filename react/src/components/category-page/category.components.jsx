@@ -90,7 +90,6 @@ const MainPage = () => {
                       Add To Cart
                     </button>
                   </div>
-                  <img className="cart" src={cart} alt="add to cart"/> 
                 </div>
               </div>
             ))}
