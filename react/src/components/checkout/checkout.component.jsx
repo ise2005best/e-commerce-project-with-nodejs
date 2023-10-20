@@ -6,12 +6,14 @@ import {ReactComponent as CANCELICON} from "../../static/noun-cancel-1259617.svg
 import './checkout.styles.scss';
 
 const ProductSection = () => {
-    const { cartItems, addItemsToCart } = useContext(CartContext);
+    const { cartItems, removeEntireItemFromCart, removeItemFromCart } = useContext(CartContext);
 
     const calculateTotal = (item) => {
         return item.price * item.quantity;
     };
-
+    const handleRemoveItem = (cartItem) =>{
+        removeEntireItemFromCart(cartItem)
+    }
     return (
         <div className="product-section">
         <h2 className="main-texts">Your Shopping Cart</h2>
@@ -26,7 +28,7 @@ const ProductSection = () => {
                             <p>
                                 
 
-                                Quantity: <PLUSICON className="plus-icon" onClick={console.log("Hello")}/>
+                                Quantity: <PLUSICON className="plus-icon" />
                                 {cartItem.quantity}
                                 <MINUSICON className="minus-icon" />
                             </p>
@@ -34,7 +36,10 @@ const ProductSection = () => {
                     </div>
                     <div>
                         <p>₦{calculateTotal(cartItem)}</p>
-                        <CANCELICON className="cancel-icon"/>
+                        <span className="cancel-icon" onClick={ () => handleRemoveItem(cartItem)}>
+                        <CANCELICON/>
+                        </span>
+                        
                     </div>
                 </div>
             ))}
@@ -47,6 +52,9 @@ const ProductSection = () => {
 
 const SummarySection = ({ cartTotal }) => {
     const [discountCode, setDiscountCode] = useState("");
+    const Vat = 0.075 * cartTotal;
+    const shipping = 3000;
+    const estimatedTotal = cartTotal + Vat + shipping
 
 
     return (
@@ -54,8 +62,8 @@ const SummarySection = ({ cartTotal }) => {
             <h2 className="main-text">Order Summary</h2>
             <div className="summary-details">
                 <p>Subtotal: ₦{cartTotal}</p>
-                <p>Shipping: ₦{3000}</p>
-                <p>VAT (7.5%): ₦{0.075*cartTotal}</p>
+                <p>Shipping: ₦{shipping}</p>
+                <p>VAT (7.5%): ₦{Vat}</p>
                 
             </div>
             <div className="discount-section">
@@ -68,7 +76,7 @@ const SummarySection = ({ cartTotal }) => {
                 <button className="discount-button">Apply</button>
             </div>
             <div className="estimated-total">
-                <p >Estimated Total: ₦{}</p>
+                <p >Estimated Total: ₦{estimatedTotal}</p>
                 </div>
             
             <button className="checkout-button">Checkout</button>

@@ -2,10 +2,9 @@ import React, { useState ,useEffect} from "react";
 import PRODUCTS from "../products-data.json";
 import "./product-detail.styles.scss";
 
-const ProductDetail = ({ addItemsToCart }) => {
-    const url = window.location.href.split("/");
-    const urlID = url[4];
-    const productId = PRODUCTS[urlID].id - 2;
+const ProductDetail = () => {
+    const {id} = useParams();
+    const productId = PRODUCTS[id]?.id - 2;
 
     const [quantity, setQuantity] = useState(1);
     const [mainImage, setMainImage] = useState(PRODUCTS[productId]['tiny-images'][0]);
@@ -15,6 +14,7 @@ const ProductDetail = ({ addItemsToCart }) => {
     };
 
     const handleAddToCart = () => {
+        addItemWithQuantityToCart(PRODUCTS[id - 1], quantity)
         //add logic to ad to cart
     };
 
