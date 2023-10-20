@@ -90,7 +90,6 @@ const SignInForm = () => {
                     Dont have an account? Please sign up
                 </Link>
 
-                {/* <ForgetPasswordPage email={email}/> */}
             </form>
         </div>
     )

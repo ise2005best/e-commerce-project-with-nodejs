@@ -9,7 +9,7 @@
   box-shadow: 41px 41px 82px #bebebe, -41px -41px 82px #f9f5f5;
   flex-direction: column;
   height: fit-content;
-  width: 600px;
+  max-width: 600px;
   position: absolute;
   top: 0;
   right: 0;
@@ -29,17 +29,21 @@
   .password-container {
     display: flex;
     align-items: center;
+    width: 100%;
   }
 
   .sign-in-text {
-    width: 55vh;
+   max-width: 500px;
     padding: 8px;
     outline: none;
     border-radius: 4px;
     box-sizing: border-box;
     margin-top: 5px;
     margin-bottom: 6px;
-    border: 0.5px solid r#1D2743;
+    border: 0.5px solid lightgray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .sign-in-text:hover {
@@ -96,4 +100,22 @@
     font-weight: 500px;
     font-family: "El Messiri", sans-serif;
   }
+}
+
+@media (max-width: 780px) {
+
+  .sign-in{
+    margin: auto 40px;
+  }
+  .sign-in .sign-in-text {
+    width: 90%; 
+    position: relative;
+    left: 10px;
+    margin-top: 10px;
+  }
+
+  .sign-in .login-button {
+    width: 75%; 
+  }
+
 }
