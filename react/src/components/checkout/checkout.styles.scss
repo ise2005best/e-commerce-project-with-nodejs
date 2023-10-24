@@ -1,127 +1,166 @@
-
 @import url("https://fonts.googleapis.com/css2?family=El+Messiri&display=swap");
 
 .checkout-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-family: 'El Messiri', sans-serif;
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: "El Messiri", sans-serif;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  height: 100%;
 }
-
-h2{
-    font-weight: 800;
-}
-.product-section {
-    width: 60%;
-    padding: 20px;
-}
-.summary-section {
-    width: 35%;
-    padding: 20px;
+.left-side{
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    width: 70%;
+    height: 100%;
+}
+
+.progress-bar {
+height: 14vh;
+margin: 10px;
+padding: 10px;
+border: 1px solid #ddd;
+border-radius: 5px;
+font-family: "El Messiri", sans-serif;
+box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+.order-summary {
+    width: 30%;
+    height: 100%;
+}
+h2 {
+  font-weight: 800;
+}
+.product-section {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+}
+.summary-section {
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+
+  p:first-of-type{
+    margin: 10px 0;
+  }
+  p {
+    margin: 30px 0;
+    font-size: larger;
+  }
+  
+}
+
+.summary-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 78vh;
 }
 
 .main-text {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  font-size: xx-large;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 14px;
+  width: 100%;
 }
-
+.main-texts {
+    position: sticky;
+    top: 0;
+    background-color: #fff; 
+    z-index: 1; /* Ensure the header appears above the scrolling content */
+    padding: 30px 5px;
+    border-bottom: 1px solid #ddd;
+  }
 .product-list {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  margin: 10px;
+  padding: 0px 30px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-family: "El Messiri", sans-serif;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  height: 64vh;
+  overflow-y: scroll;
+ 
 }
 
 .product-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px 0;
 }
 
 .product-item img {
-    width: 100px;
-    height: auto;
-   object-fit: cover;
-   margin-right :15px
-   
+  width: 100px;
+  height: auto;
+  object-fit: cover;
+  margin-right: 15px;
 }
 
 .product-details {
-    margin-left: 10px;
-    display: flex;
+  margin-left: 10px;
+  display: flex;
 }
 
 .discount-section {
-    display: flex;
-    align-items: center;
-    margin-top: 10px;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
 }
 
 .discount-section input[type="text"] {
-    flex: 1;
-    padding: 5px;
+  flex: 1;
+  padding: 5px;
 }
-.discount-section input{
-    font-size: medium;
-    width: 100%;
+.discount-section input {
+  font-size: medium;
+  width: 100%;
 }
 .discount-button {
-    margin-left: 10px;
-    padding: 6px 40px;
-    margin-bottom: 23px;
-    background-color: #1d2743;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition:  2s ease-in-out;
-    :hover{
-        background-color: #FE9000
-    }
+  margin-left: 10px;
+  padding: 6px 40px;
+  margin-bottom: 23px;
+  background-color: #1d2743;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  transition: 2s ease-in-out;
+  :hover {
+    background-color: #fe9000;
+  }
 }
 
 .checkout-button {
-    padding: 10px 20px;
-    background-color: #1d2743;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    width: 100%;
+  padding: 10px 20px;
+  background-color: #1d2743;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-top: auto;
 
-    :hover {
-        background-color: #FE9000
-    }
+  :hover {
+    background-color: #fe9000;
+  }
 }
 
-.estimated-total{
-    display: flex;
-    align-items: flex-end;
-    font-size: large;
-    font-weight: 800;
-}
+.estimated-total {
+  display: flex;
+  align-items: flex-end;
+  font-size: large;
+  font-weight: 800;
 
-/* Define media queries for responsiveness */
-
-/* Small screens */
-@media (max-width: 768px) {
-    .checkout-container {
-        flex-direction: column;
-    }
-
-    .product-section, .summary-section {
-        width: 100%;
-    }
-
-    .divider {
-        width: 100%;
-        height: 2px;
-        margin: 20px 0;
-    }
+  p:last-of-type{
+    margin: 50px 0;
+  }
 }

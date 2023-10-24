@@ -1,6 +1,6 @@
 import { useContext } from "react";
-import {ReactComponent as PLUSICON} from '../../static/noun-plus-3796374.svg'
-import {ReactComponent as MINUSICON} from '../../static/noun-minus-338134.svg'
+import {ReactComponent as PLUSICON} from '../../static/noun-plus-1088459.svg'
+import {ReactComponent as MINUSICON} from '../../static/noun-minus-1088464.svg'
 import {CartContext} from '../../context/cart.context'
 const CartItem = ({CartItem}) =>{
     const {title, quantity, price, imageUrl, id} = CartItem;
