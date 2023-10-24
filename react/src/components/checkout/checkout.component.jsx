@@ -6,7 +6,7 @@ import {ReactComponent as CANCELICON} from "../../static/noun-cancel-1259617.svg
 import './checkout.styles.scss';
 
 const ProductSection = () => {
-    const { cartItems, removeEntireItemFromCart, removeItemFromCart } = useContext(CartContext);
+    const { cartItems, removeEntireItemFromCart} = useContext(CartContext);
 
     const calculateTotal = (item) => {
         // remove the N from the price

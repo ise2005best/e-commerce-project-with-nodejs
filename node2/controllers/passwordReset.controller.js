@@ -59,13 +59,13 @@ router.post('/password-reset/otp-confirmation', (req, res) => {
 })
 router.post('/password-reset/resend-otp', (req, res) => {
     const userEmail = req.cookies.otpUserEmail;
-    const checkForUserName = 'SELECT Name FROM users where `email` = ?'
-    db.query(checkForUserName, [userEmail], (err, data) => {
+    const checkForUserFirstName = 'SELECT firstName FROM users where `email` = ?'
+    db.query(checkForUserFirstName, [userEmail], (err, data) => {
         if (err) {
             res.json("An error occured")
         } if (data) {
-            const userDisplayName = data[0].Name
-            addOtpToDb.handleOtpSubmission(userEmail, userDisplayName)
+            const userFirstName = data[0].firstName
+            addOtpToDb.handleOtpSubmission(userEmail, userFirstName)
             res.json('Successful')
         }
     })
