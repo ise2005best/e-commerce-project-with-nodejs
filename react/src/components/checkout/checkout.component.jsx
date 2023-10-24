@@ -6,7 +6,7 @@ import OrderSummary from "./order-summary.component";
 
 
 const ProductSection = () => {
-    const { cartItems, removeEntireItemFromCart, removeItemFromCart } = useContext(CartContext);
+    const { cartItems, removeEntireItemFromCart} = useContext(CartContext);
 
     const calculateTotal = (item) => {
         // remove the N from the price

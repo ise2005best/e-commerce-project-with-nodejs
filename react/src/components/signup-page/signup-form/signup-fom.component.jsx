@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
 import PasswordChecklist from "react-password-checklist";
 import { Icon } from 'react-icons-kit';
 import { eyeOff } from 'react-icons-kit/feather/eyeOff';
@@ -8,7 +8,8 @@ import LogIn from "../../login-form/login";
 import axios from 'axios';
 import './signup-form.styles.scss';
 const initialFields = {
-    displayName: '',
+    firstName: '',
+    lastName: '',
     email: '',
     password: '',
     confirmPassword: '',
@@ -19,7 +20,7 @@ const SignUpForm = () => {
     const [showPassword, setShowPassword] = useState(false);
     const [passwordValid, setPasswordValid] = useState(false);
     const [errorMessages, setErrorMessages] = useState('');
-    const { displayName, email, password, confirmPassword } = fields;
+    const {firstName, lastName, email, password, confirmPassword } = fields;
     const navigate = useNavigate();
     localStorage.setItem('usersEmail',fields.email)
 
@@ -56,11 +57,19 @@ const SignUpForm = () => {
                 <div className="text-fields">
                     <LogIn type=""
                         required
-                        placeholder="Name"
+                        placeholder="First Name"
                         className="sign-in-text"
                         onChange={handleChange}
-                        name="displayName"
-                        value={displayName} 
+                        name="firstName"
+                        value={firstName} 
+                        />
+                        <LogIn type=""
+                        required
+                        placeholder="Last Name"
+                        className="sign-in-text"
+                        onChange={handleChange}
+                        name="lastName"
+                        value={lastName} 
                         />
                     <LogIn type="email"
                         required
@@ -109,7 +118,7 @@ const SignUpForm = () => {
                         onChange={(isValid) => { setPasswordValid(isValid) }}
                     />
                 </div>
-                <button type="submit" className="submit-button"><Link className="link" to={"/sign-in-otp"}>Submit</Link></button>
+                <button type="submit" className="submit-button"> Submit</button>
             </form>
             </div>
         </div>

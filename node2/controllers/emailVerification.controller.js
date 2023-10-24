@@ -42,8 +42,8 @@ router.post('/verify-email', (req, res) => {
 router.post('/verify-email/resend-otp', (req, res) => {
     res.header("Access-Control-Allow-Origin", "http://localhost:3000")
     const usersEmail = req.cookies.usersEmail
-    const usersDisplayName = req.cookies.usersDisplayName
-    handleEmail(usersEmail, usersDisplayName, otp)
+    const usersLastName = req.cookies.usersLastName
+    handleEmail(usersEmail, usersLastName, otp)
    return res.json("Successful")
 })
 module.exports = router;
