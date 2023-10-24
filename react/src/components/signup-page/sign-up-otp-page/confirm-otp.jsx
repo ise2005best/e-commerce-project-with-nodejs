@@ -94,7 +94,6 @@ function OTPPage() {
      try {
       if(enteredOtp){
         const response = await axios.post('http://localhost:8002/verify-email', [enteredOtp], { withCredentials: true })
-        console.log(response)
         if(response.data === 'Successful'){
           navigate('/')
         }

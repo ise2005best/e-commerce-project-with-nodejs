@@ -11,7 +11,6 @@ export const FilteredProductsProvider = ({ children }) => {
   const [filteredProducts, setFilteredProducts] = useState(PRODUCTS);
 
   const updateFilteredProducts = (newFilteredProducts) => {
-    console.log(newFilteredProducts)
     setFilteredProducts(newFilteredProducts);
   };
 

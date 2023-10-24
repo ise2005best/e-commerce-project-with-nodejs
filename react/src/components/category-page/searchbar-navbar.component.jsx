@@ -1,4 +1,4 @@
-import React, {useState, useContext} from "react";
+import React, {useState, useContext, useEffect} from "react";
 import PRODUCTS from '../../products-data.json';
 import { FilteredProductsContext } from "../../context/filteredProduct.context";
 
@@ -6,7 +6,6 @@ const SearchBar = () =>{
   const {updateFilteredProducts} = useContext(FilteredProductsContext)
     const [isFocused, setIsFocused] = useState(false);
     const [text, setText] = useState('');
-    const [filteredProducts, setFilteredProducts] = useState(PRODUCTS);
     const handleFocus = () => {
         setIsFocused(true);
       };
@@ -19,13 +18,17 @@ const SearchBar = () =>{
         const text = event.target.value.toLowerCase();
         setText(text)
       };
-      const newFilteredProducts = filteredProducts.filter((cake)=>{
+    
+    useEffect(()=>{
+      const newFilteredProducts = PRODUCTS.filter((cake)=>{
        
         // incase user searches in upper case as well
         return cake.title.toLocaleLowerCase().includes(text);
     })
-    console.log(newFilteredProducts)
-     updateFilteredProducts(newFilteredProducts)
+    updateFilteredProducts(newFilteredProducts)
+
+    },[text])
+    
     return(
         <div>
  <div className={`search-container ${isFocused ? "focused" : ""}`}>

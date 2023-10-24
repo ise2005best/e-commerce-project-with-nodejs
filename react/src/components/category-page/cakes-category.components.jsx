@@ -32,7 +32,7 @@ const CakesCategory = () => {
     return (
         <div>
 <div ref={cakeRef} className="categories-container">
-            {product
+            {filteredProducts
                 .slice(0, visibleCategories)
                 .map(({ title, id, imageUrl, price }) => (
                     <div
@@ -61,7 +61,7 @@ const CakesCategory = () => {
                     </div>
                 ))}
         </div>
-        {visibleCategories < product.length && (
+        {visibleCategories < filteredProducts.length && (
                 <button className="show-more-button" onClick={handleShowMore}>
                     Show More
                 </button>

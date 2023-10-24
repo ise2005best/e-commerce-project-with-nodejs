@@ -1,12 +1,16 @@
-import React from "react";
+import React, {useContext} from "react";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Footer from "../Footer-page/footer";
 import slider from '../../slider-data.json';
+import { FilteredProductsContext } from "../../context/filteredProduct.context";
 import CakesCategory from "./cakes-category.components";
 
 const MainPage = () => {
+  const {filteredProducts} = useContext(FilteredProductsContext);
+  const lengthOfFilteredProducts = filteredProducts.length >= 27;
+  console.log(lengthOfFilteredProducts);
   const carouselImages = slider.map((category) => ({
     id: category.id,
     imageUrl: category.imageUrl,
@@ -26,13 +30,20 @@ const MainPage = () => {
     <div>
       <div>
         <div className="carousel-container">
-          <Slider {...carouselSettings} className="carousel">
-            {carouselImages.map((image) => (
-              <div key={image.id}>
-                <img src={image.imageUrl} alt={`Carousel ${image.id}`} />
-              </div>
-            ))}
-          </Slider>
+   {
+    lengthOfFilteredProducts
+    ? <Slider {...carouselSettings} className="carousel">
+    {carouselImages.map((image) => (
+      <div key={image.id}>
+        <img src={image.imageUrl} alt={`Carousel ${image.id}`} />
+      </div>
+    ))}
+  </Slider>
+  : null
+ 
+ 
+   }
+          
         </div>
         <CakesCategory />
       </div>

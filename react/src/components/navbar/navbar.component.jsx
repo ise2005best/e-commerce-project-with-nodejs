@@ -54,6 +54,7 @@ const NavBar = () => {
             {
               currentUser ? (
                 <span className="nav-link">
+                  <PERSONICON/>
                   Hello {currentUser}
                 </span>
               ) : (
