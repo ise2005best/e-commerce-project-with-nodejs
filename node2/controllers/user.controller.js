@@ -9,9 +9,11 @@ const otp = require('../utils/handleOtp');
 router.post('/sign-up', (req, res) => {
     const userPlainPassword = req.body.password;
     const userEmail = req.body.email;
-    const userDisplayName = req.body.displayName;
-    res.cookie('usersEmail', userEmail, {maxAge: 10000000, httpOnly: true});
-    res.cookie('usersDisplayName', userDisplayName,  {maxAge: 10000000, httpOnly: true});
+    const userFirstName =  req.body.firstName;
+    const userLastName = req.body.lastName;
+    res.cookie('usersEmail', userEmail, {maxAge: 10000000, httpOnly: false});
+    res.cookie('usersFirstName', userFirstName,  {maxAge: 10000000, httpOnly: false});
+    res.cookie('usersLastName', userLastName,  {maxAge: 10000000, httpOnly: false});
     bcrypt.hash(userPlainPassword, saltRoundsForBcrypt, (err, hash) => {
         if (err) {
             res.json('Error hashing password')
@@ -25,16 +27,16 @@ router.post('/sign-up', (req, res) => {
                 if (data.length > 0) {
                     res.json("Email already exists");
                 } else {
-                    const insertSql = "INSERT INTO users (`name`, `email`, `password`, `verified`) VALUES (?, ?, ?, ?)";
+                    const insertSql = "INSERT INTO users (`firstName`, `lastName`, `email`, `password`, `verified`) VALUES (?, ?, ?, ?, ?)";
                     const values = [
-                        userDisplayName, userEmail, hash, 0,
+                        userFirstName, userLastName, userEmail, hash, 0,
                     ];
                     db.query(insertSql, values, (insertErr) => {
                         if (insertErr) {
                             console.error(insertErr);
                         }
                         else {
-                           handleOtp(userEmail, userDisplayName, otp);                          
+                           handleOtp(userEmail, userLastName, otp);                          
                             res.json('Success');
                         }
                     });
@@ -73,14 +75,16 @@ router.post('/sign-in', (req, res) => {
 router.post('/forget-password', (req, res) => {
     const userEmail = req.body.email;
     res.cookie('otpUserEmail', userEmail, {maxAge: 10000000, httpOnly: true})
-    const getuserName = "SELECT Name FROM users WHERE `email` = ?"
-    db.query(getuserName, [userEmail], (err, data) => {
+    const getuserFirstName = "SELECT firstName FROM users WHERE `email` = ?"
+    db.query(getuserFirstName, [userEmail], (err, data) => {
         if (err) {
             console.log(err)
             res.json("An error occurred")
         } if (data.length > 0) {
-            const userDisplayName = data[0].Name;
-            res.cookie('usersDisplayName', userDisplayName)
+            const userFirstName = data[0].firstName;
+            const userLastName = data[0].lastName
+            res.cookie('usersFirstName', userFirstName)
+            res.cookie('usersLastName', userLastName )
             const checkEmailsql = "SELECT * FROM users WHERE `email` = ? ";
             db.query(checkEmailsql, [userEmail], (err, data) => {
                 if (err) {
@@ -88,7 +92,7 @@ router.post('/forget-password', (req, res) => {
                     res.status(500).json({ error: 'An error occurred' })
                 }
                 if (data.length > 0) {
-                    addOtpToDB.handleOtpSubmission(userEmail,userDisplayName)
+                    addOtpToDB.handleOtpSubmission(userEmail,userFirstName)
                     return res.json('ok')
                 } 
             })
