@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=El+Messiri&display=swap");
 
+
 .sidebar-icon {
   display: none;
   align-self: center;
@@ -53,6 +54,7 @@
       cursor: pointer;
       font-size: medium;
       color: #fe9000;
+      margin: 0px 15px;
     }
   }
 }
@@ -71,6 +73,7 @@
   border: #fe9000 1px solid;
   font-size: 12px;
   transition: width 0.3s ease-in-out, font-size 0.3s ease-in-out;
+  margin-right: 15px;
 }
 
 .search-box::placeholder {
