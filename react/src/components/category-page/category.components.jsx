@@ -28,7 +28,6 @@ const MainPage = () => {
 
   return (
     <div>
-      <div>
    {
     lengthOfFilteredProducts
     ? 
@@ -50,10 +49,7 @@ const MainPage = () => {
   <Footer/>
  </div>
  
-   }
-       
-      </div>
-     
+   }     
     </div>
   );
 };

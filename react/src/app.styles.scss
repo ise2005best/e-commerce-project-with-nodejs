@@ -78,12 +78,11 @@ body {
 
 .carousel-container {
   width: 100%;
-  height: 700px;
-  padding-bottom: 100px;
 }
 
 .carousel {
   width: 100%;
+  margin-bottom: 50px;
   /* Center images vertically and horizontally */
   display: flex;
   align-items: center;
@@ -194,9 +193,7 @@ right: 0;
     padding: 0 40px;
     column-gap: 0px;
   }
-  .carousel-container {
-    height: 500px;
-  }
+  
   .carousel {
     img {
       height: 400px;

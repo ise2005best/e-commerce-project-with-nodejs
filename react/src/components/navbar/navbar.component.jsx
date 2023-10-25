@@ -44,13 +44,6 @@ const NavBar = () => {
           <div className="nav-links" style={navlinks}>
            <SearchBar/>
 
-            <Link className="nav-link" to={"/"}>
-              HOME
-            </Link>
-
-            <Link to="#" className="nav-link">
-              CAKES
-            </Link>
             {
               currentUser ? (
                 <span className="nav-link">
