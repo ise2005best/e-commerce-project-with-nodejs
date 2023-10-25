@@ -29,25 +29,31 @@ const MainPage = () => {
   return (
     <div>
       <div>
-        <div className="carousel-container">
    {
     lengthOfFilteredProducts
-    ? <Slider {...carouselSettings} className="carousel">
+    ? 
+    <div className="carousel-container"> 
+ <Slider {...carouselSettings} className="carousel">
     {carouselImages.map((image) => (
       <div key={image.id}>
         <img src={image.imageUrl} alt={`Carousel ${image.id}`} />
       </div>
     ))}
   </Slider>
-  : null
- 
+  <CakesCategory />
+  <Footer />
+      </div>
+   
+  :
+  <div className="carousel-container">  
+  <CakesCategory/>
+  <Footer/>
+ </div>
  
    }
-          
-        </div>
-        <CakesCategory />
+       
       </div>
-      <Footer />
+     
     </div>
   );
 };

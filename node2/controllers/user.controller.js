@@ -59,6 +59,7 @@ router.post('/sign-in', (req, res) => {
         if(data){
             const usersFirstName = data[0].firstName;
             const usersLastName = data[0].lastName;
+            console.log(usersFirstName, usersLastName)
             res.cookie("usersFirstName", usersFirstName, {maxAge: 10000000, httpOnly: false })
             res.cookie("usersLastName", usersLastName, {maxAge: 10000000, httpOnly: false })
         }

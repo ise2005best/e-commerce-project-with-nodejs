@@ -11,6 +11,7 @@ export const userContext = createContext({
 
 export const UserProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState(null);
+    console.log(Cookies.get())
     useEffect(()=>{
         setCurrentUser(usersFirstName)
     },[currentUser])
