@@ -52,6 +52,7 @@ const SignInForm = () => {
 
             <h1 className="login"> LOGIN </h1>
             <form onSubmit={handleSubmit}>
+                <div className="info">
                 <LogIn type="email"
                     required
                     placeholder="Email"
@@ -69,11 +70,13 @@ const SignInForm = () => {
                         value={password}
 
                     />
+                   
                     <Icon
                         icon={showPassword ? eyeOff : eye}
                         onClick={togglePassword}
                         className="eye-icon"
-                    />
+                    /> 
+                    </div>
                 </div>
                 <p className="error-messages">{errorMessages}</p>
                 <Link className="forget-password-button" to={'/forget-password'}>

@@ -17,13 +17,17 @@ body {
   padding: 50px;
   margin-right: 50px;
 }
-
+ 
 /* Styling for the footer */
 .footer {
   background: linear-gradient(to bottom, #1D2743 70%, #F5FBEF 30%);
   color: #FE9000;
   padding: 20px 0;
   font-size: 12px;
+}
+
+p{
+  line-height: 0.7;
 }
 
 .footer-content {
