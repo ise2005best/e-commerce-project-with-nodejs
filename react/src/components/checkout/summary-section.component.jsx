@@ -30,7 +30,6 @@ const SummarySection = ({ cartTotal }) => {
                 <p >Estimated Total: ₦{estimatedTotal}</p>
                 </div>
             
-            <button className="checkout-button">Checkout</button>
         </div>
         </div>
     );
