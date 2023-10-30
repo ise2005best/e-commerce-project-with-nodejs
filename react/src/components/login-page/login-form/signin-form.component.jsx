@@ -25,7 +25,7 @@ const SignInForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
         try {
-            const response = await axios.post('http://localhost:8002/sign-in', fields)
+            const response = await axios.post('http://localhost:8002/sign-in', fields, {withCredentials: true});
             if (response.data === "Success") {
                 navigate('/')
             } else if (response.data === "Incorrect password") {

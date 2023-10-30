@@ -3,10 +3,9 @@ import { CartContext } from "../../context/cart.context";
 import { ReactComponent as CANCELICON } from "../../static/noun-cancel-1259617.svg";
 import './checkout.styles.scss';
 import OrderSummary from "./order-summary.component";
-import ProgressBar1 from "../progress-bar/progress-bar.component 2";
-import DeliveryDetail from "./delivery-detail.component";
+import ProgressBar1 from "../progress-bar/progress-bar.component";
+import DeliveryDetail from "./delivery-details/delivery-detail.component";
 import Payment from "./payment.component";
-import { useNavigate, useSearchParams } from 'react-router-dom';
 
 const ProductSection = () => {
     const { cartItems, removeEntireItemFromCart } = useContext(CartContext);
@@ -21,14 +20,9 @@ const ProductSection = () => {
 
     const [page, setPage] = useState(1);
 
-    const navigate = useNavigate();
-
     const handleNextPage = () => {
       if (page < 3) {
         setPage((prevPage) => prevPage + 1);
-        const url = new URL(window.location);
-        url.searchParams.set("tab", page +1);
-        window.history.pushState({}, "", url);
       }
     };
       
@@ -69,16 +63,10 @@ const ProductSection = () => {
                     </div>
                 )}
                 {page === 2 && (
-          <div className="delivery-details">
-            <h2 className="main-texts">Step 2: Delivery Details</h2>
             <DeliveryDetail/>
-          </div>
         )}
         {page === 3 && (
-          <div className="payment">
-            <h2 className="main-texts">Step 3: Payment</h2>
            <Payment/>
-          </div>
         )}
                 </div>
             </div>
