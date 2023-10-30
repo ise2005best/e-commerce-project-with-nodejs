@@ -36,7 +36,8 @@ const ProductSection = () => {
         <div className="product-section">
             <div className="left-side">
                 <div className="progress-bar-ctn"> 
-                <ProgressBar1 page={page} onNextPage={handleNextPage} /></div>
+                <ProgressBar1 page={page} onNextPage={handleNextPage} />
+                </div>
                 <div className="product-list">
                 {page === 1 && (
                     <div>
