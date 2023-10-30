@@ -2,6 +2,7 @@ import React, { useState , useContext} from "react";
 import { useParams } from "react-router-dom";
 import { CartContext } from "../context/cart.context";
 import PRODUCTS from "../products-data.json";
+import dropdownArrow from "../static/drop-down-arrow.png"
 import "./product-detail.styles.scss";
 const ProductDetail = () => {
     const {addItemWithQuantityToCart} = useContext(CartContext)
@@ -59,9 +60,10 @@ const ProductDetail = () => {
                             {[1, 2, 3, 4, 5, 6, 7].map((option) => (
                                 <option key={option} value={option}>
                                     {option}
-                                </option>
-                            ))}
+                             </option>
+                            ))}  
                         </select>
+                       <img src={dropdownArrow} alt=""/>
                     </form>
 
                     <span className="description">{PRODUCTS[productId].description1} </span>

@@ -13,7 +13,8 @@ import OTPPage from './components/signup-page/sign-up-otp-page/confirm-otp';
 import ProductDetail from './products/product-detail.component';
 import CheckOutComponent from './components/checkout/checkout.component';
 import OrderSummary from './components/checkout/order-summary.component';
-
+import DeliveryDetail from './components/checkout/delivery-detail.component';
+import Payment from './components/checkout/payment.component';
 const App = () => {
   const location = useLocation();
 
@@ -34,8 +35,8 @@ const App = () => {
             <Route path="reset-password/reset-otp" element={<OtpPage />} />
             <Route path="reset-password" element={<UpdatePassword />} />
             <Route path="verify-email" element={<OTPPage />} />
-            <Route path="product/:id" element={<ProductDetail/>} />
-            <Route path="product/checkout" element={<CheckOutComponent/>} />
+            <Route path="product/:id" element={<ProductDetail />} />
+            <Route path="product/checkout" element={<CheckOutComponent />} />
           </Routes>
         </CSSTransition>
       </TransitionGroup>
