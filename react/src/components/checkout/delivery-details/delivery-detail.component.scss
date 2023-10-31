@@ -1,0 +1,104 @@
+.name-fields{
+   display: flex;
+   width: 50% !important;
+   flex-direction: row;
+   margin: 10px 15px;
+   text-align: start !important;
+   padding: 0 10px  !important;
+   font-size: 18px !important;
+}
+
+.name{
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.email-field{
+    margin: 10px 15px;
+    height: 40px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    border-radius: 5px;
+    display: flex;
+    padding: 0 10px  !important;
+
+}
+
+.delivery-details{
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+}
+
+.email-phone{
+    display: flex;
+    margin-bottom: 20px;   
+}
+
+.phone-field{
+    margin: 10px;
+    height: 40px;
+    border-radius: 20;
+}
+.PhoneInputInput{
+    height: 40px;
+    border: 1px solid #ccc;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.address-field{
+    display: flex;
+   width: 96.5% !important;
+   flex-direction: row;
+   margin: 10px 15px;
+   text-align: start !important;
+   font-size: 18px !important;
+   padding: 0 10px  !important;
+   margin-bottom: 25px;
+
+}
+
+
+select{
+    -webkit-appearance: none;
+    margin: 10px 15px !important;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent; /* Removes the background color */
+    border: none; /* Removes the border */
+    padding: 0; /* Removes padding */
+    cursor: pointer;
+    height: 40px;
+    
+  }
+
+  .address-state{
+    display: flex;
+  }
+  
+.city-field, .state-field {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    font-size: 18px;
+    content: "o";
+    color: #b1b0b0; 
+    width: 50%;
+  }
+  
+  .city-field:focus, .state-field:focus {
+    outline: none;
+    border-color: #ccc; 
+  }
+  .city-field:hover, .state-field:hover {
+    outline: none;
+    border-color: #fe9000; 
+  }
+
+  .city-field::after{
+    content: "▼";
+  }
+  

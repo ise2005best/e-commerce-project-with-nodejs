@@ -3,6 +3,7 @@ import Cookies from 'js-cookie';
 import NaijaStates from 'naija-state-local-government';
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
+import "./delivery-detail.component.scss"
 const DeliveryDetail = () => {
     const initialFields = {
         firstName: Cookies.get("usersFirstName"),
@@ -40,7 +41,8 @@ const DeliveryDetail = () => {
                 <div className="delivery-details">
                     <h2 className="main-texts">Step 2: Delivery Details</h2>
                 </div>
-                <div>
+                <div className="delivery-details">
+                    <div className="name">
                     {
                         usersFirstName
                             ?
@@ -80,8 +82,8 @@ const DeliveryDetail = () => {
                                 onChange={handleChange}
                                 name="lastName" />
                     }
-
-                    <br />
+                    </div>
+                    <div className="email-phone">
                     {
                         usersEmailAddress ?
                             <input
@@ -108,8 +110,9 @@ const DeliveryDetail = () => {
                     onChange={(number) => handleNumberChange(number)}
                     required
                     name= "phoneNumber"
-                   
+                    className="phone-field"
                     />
+                    </div>
                     {/* <input
                         type='tel'
                         className="phone-field"
@@ -118,7 +121,7 @@ const DeliveryDetail = () => {
                         value={phoneNumber}
                         onChange={handleChange}
                         name="phoneNumber" /> */}
-                    <br />
+                   
                     <input
                         type='text'
                         required
@@ -127,7 +130,8 @@ const DeliveryDetail = () => {
                         value={homeAddress}
                         onChange={handleChange}
                         name="homeAddress" />
-                    <br />
+                   
+                    <div className="address-state">
                     <select
                         name="state"
                         className="city-field"
@@ -138,7 +142,7 @@ const DeliveryDetail = () => {
                         {
                             NigerianStates.map((states) => (
                                 <option value={states} key={states}>
-                                    {states}
+                                    {states}                                
                                 </option>
                             ))
                         }
@@ -158,6 +162,7 @@ const DeliveryDetail = () => {
                             ))
                         }
                     </select>
+                    </div>
                 </div>
             </div>
         </div>
