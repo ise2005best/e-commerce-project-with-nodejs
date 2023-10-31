@@ -41,7 +41,6 @@ const SearchBar = () =>{
                 onFocus={handleFocus}
                 onBlur={handleBlur}
               />
-              {/* <CakesCategory filteredProducts={filteredProducts} /> */}
             </div>
         </div>
        

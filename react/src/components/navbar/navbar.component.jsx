@@ -9,7 +9,7 @@ import "./navbar.styles.scss";
 
 const NavBar = () => {
   const { isCartOpen } = useContext(CartContext);
-  const { currentUser } = useContext(userContext)
+  const { currentUser } = useContext(userContext);
   const [showNavLinks, setShowNavLinks] = useState(false);
   const PERSONICON = () =>
     <svg width="27" height="27" viewBox="0 0 27 33" fill="none" xmlns="http://www.w3.org/2000/svg">

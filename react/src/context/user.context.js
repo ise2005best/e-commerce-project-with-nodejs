@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import Cookies from 'js-cookie';
-const usersFirstName = Cookies.get("usersFirstName")
+const usersFirstName = Cookies.get("usersFirstName");
 
 
 export const userContext = createContext({
@@ -11,7 +11,6 @@ export const userContext = createContext({
 
 export const UserProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState(null);
-    console.log(Cookies.get())
     useEffect(()=>{
         setCurrentUser(usersFirstName)
     },[currentUser])

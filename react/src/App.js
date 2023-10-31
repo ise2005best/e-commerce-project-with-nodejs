@@ -12,9 +12,6 @@ import OtpPage from './components/reset-password/reset-otp-page/confirm-otp';
 import OTPPage from './components/signup-page/sign-up-otp-page/confirm-otp';
 import ProductDetail from './products/product-detail.component';
 import CheckOutComponent from './components/checkout/checkout.component';
-import OrderSummary from './components/checkout/order-summary.component';
-import DeliveryDetail from './components/checkout/delivery-detail.component';
-import Payment from './components/checkout/payment.component';
 const App = () => {
   const location = useLocation();
 
