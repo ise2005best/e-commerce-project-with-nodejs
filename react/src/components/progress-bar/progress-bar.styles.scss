@@ -37,3 +37,19 @@
   right : 6%;
   width: 20%;
 }
+
+@media (max-width: 680px){
+  .next{
+    right: 30%;
+    width: 40%;
+   top: 150vh;
+   bottom: auto;
+  }
+}
+
+@media (max-height: 700px){
+  .next{
+    top: 170%;
+  }
+}
+
