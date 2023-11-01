@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import './progress-bar.styles.scss'
 
-const ProgressBar1 = ({ page, onNextPage }) => {
+const ProgressBar1 = ({ page, onNextPage}) => {
   const [progress, setProgress] = useState(2);
 
 
@@ -11,7 +11,6 @@ const ProgressBar1 = ({ page, onNextPage }) => {
   // Simulate progress increase with a useEffect
   useEffect(() => {
   }, [progress]);
-
   return (
     <div className="progress-container">
       <div
@@ -25,11 +24,15 @@ const ProgressBar1 = ({ page, onNextPage }) => {
         <div>Payment</div>
       </div>
       <br />
-      {page < 3 && (
-        <button className="next" onClick={() => {
-          onNextPage();
-          handleProgress();
-        }}>
+      {page === 2 &&(
+        <div>
+          <button className="next" type="submit" onClick={() => { onNextPage(); handleProgress(); } }>
+            Submit
+          </button>
+          </div>
+      )}
+      {page === 1 && (
+        <button className="next" type='submit' onClick={() => { onNextPage(); handleProgress(); }}>
           Next
       </button>
       )}
