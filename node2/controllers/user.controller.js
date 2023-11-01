@@ -49,6 +49,7 @@ router.post('/sign-up', (req, res) => {
 router.post('/sign-in', (req, res) => {
     const userEmail = req.body.email;
     const userPlainPassword = req.body.password;
+    console.log(userEmail)
     res.cookie('otpUserEmail', userEmail, {maxAge: 10000000, httpOnly: false});
     const checkDbForUsersFirstNameAndLastName = "SELECT firstName , lastName FROM users WHERE `email` = ? ";
     db.query(checkDbForUsersFirstNameAndLastName, [userEmail], (err, data) =>{
@@ -60,7 +61,7 @@ router.post('/sign-in', (req, res) => {
             const usersFirstName = data[0].firstName;
             const usersLastName = data[0].lastName;
             console.log(usersFirstName, usersLastName)
-            res.cookie("usersFirstName", usersFirstName, {maxAge: 10000000, httpOnly: false })
+            res.cookie("usersFirstName", usersFirstName, {maxAge: 10000000, httpOnly: false})
             res.cookie("usersLastName", usersLastName, {maxAge: 10000000, httpOnly: false })
         }
     } )

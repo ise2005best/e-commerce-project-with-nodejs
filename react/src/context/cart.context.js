@@ -43,6 +43,7 @@ const removeCartItem = (cartItems, cartItemToRemove) => {
     }
    
   }
+  
 
 export const CartContext = createContext({
     isCartOpen: false,
@@ -50,6 +51,7 @@ export const CartContext = createContext({
     cartItems: [],
     addItemsToCart: () => { },
     cartCount: 0,
+    cartTotal: 0,
     removeItemFromCart: () => { },
     removeEntireCartItem: () => {}, 
     addCartItemWithQuantity: () => {}
@@ -58,7 +60,7 @@ export const CartContext = createContext({
 export const CartProvider = ({ children }) => {
     const [isCartOpen, setIsCartOpen] = useState(false);
     const [cartItems, setCartItems] = useState([]);
-    const [cartCount, setCartCount] = useState(0)
+    const [cartCount, setCartCount] = useState(0);
 
     useEffect(() => {
       // get total sum of cartItems quantity whenever cartItems changes
@@ -88,7 +90,7 @@ export const CartProvider = ({ children }) => {
     const removeEntireItemFromCart = (productToRemove) =>{
       setCartItems(removeEntireCartItem(cartItems, productToRemove))
     }
-    const value = { isCartOpen, setIsCartOpen, addItemsToCart, cartItems, cartCount, removeItemFromCart, removeEntireItemFromCart, addItemWithQuantityToCart }
+    const value = { isCartOpen, setIsCartOpen, addItemsToCart, cartItems, cartCount, removeItemFromCart, removeEntireItemFromCart, addItemWithQuantityToCart}
     return (
         <CartContext.Provider value={value}>
             {children}

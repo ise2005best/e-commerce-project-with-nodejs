@@ -1,14 +1,16 @@
 import { useState } from "react";
-
+// import PaystackCheckout from "./paystack/paystack-checkout.component";
 const SummarySection = ({ cartTotal }) => {
     const [discountCode, setDiscountCode] = useState("");
     const Vat = 0.075 * cartTotal;
     const shipping = 3000;
-    const estimatedTotal = cartTotal + Vat + shipping
+    const estimatedTotal = cartTotal + Vat + shipping;
+    localStorage.setItem("amount", estimatedTotal.toString());
 
 
     return (
         <div className="summary-container">
+            {/* <PaystackCheckout orderTotal={estimatedTotal} /> */}
         <div className="summary-section">
             <h2 className="main-text">Order Summary</h2>
             <div>
@@ -31,6 +33,7 @@ const SummarySection = ({ cartTotal }) => {
                 </div>
             
         </div>
+       
         </div>
     );
 };

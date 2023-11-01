@@ -10,7 +10,6 @@ import CakesCategory from "./cakes-category.components";
 const MainPage = () => {
   const {filteredProducts} = useContext(FilteredProductsContext);
   const lengthOfFilteredProducts = filteredProducts.length >= 27;
-  console.log(lengthOfFilteredProducts);
   const carouselImages = slider.map((category) => ({
     id: category.id,
     imageUrl: category.imageUrl,
