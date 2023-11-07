@@ -7,7 +7,7 @@ import "./product-detail.styles.scss";
 const ProductDetail = () => {
     const {addItemWithQuantityToCart} = useContext(CartContext)
     const {id} = useParams();
-    const productId = PRODUCTS[id]?.id - 2;
+    const productId = PRODUCTS[id]?.id - 2          ;
 
     const [quantity, setQuantity] = useState(1);
     const [mainImage, setMainImage] = useState(PRODUCTS[productId]['tiny-images'][0]);

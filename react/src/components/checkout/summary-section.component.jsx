@@ -3,7 +3,7 @@ import { useState } from "react";
 const SummarySection = ({ cartTotal }) => {
     const [discountCode, setDiscountCode] = useState("");
     const Vat = 0.075 * cartTotal;
-    const shipping = 3000;
+    const shipping = 5000;
     const estimatedTotal = cartTotal + Vat + shipping;
     localStorage.setItem("amount", estimatedTotal.toString());
 
